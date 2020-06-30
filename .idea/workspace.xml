@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="694c2fe1-5f44-4cf8-8bcd-4b5ba54c8696" name="Default Changelist" comment="Default Changelist" />
+    <list default="true" id="694c2fe1-5f44-4cf8-8bcd-4b5ba54c8696" name="Default Changelist" comment="Default Changelist">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,7 +139,7 @@
       <workItem from="1593256107618" duration="11000" />
       <workItem from="1593269923069" duration="45000" />
       <workItem from="1593478736023" duration="20068000" />
-      <workItem from="1593509848833" duration="249000" />
+      <workItem from="1593509848833" duration="616000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1593510091793</created>
@@ -146,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593510091793</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Default Changelist">
+      <created>1593510113073</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593510113073</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,10 +190,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593502494201" />
-    <state x="574" y="135" key="CommitChangelistDialog2" timestamp="1593510100750">
+    <state x="574" y="135" key="CommitChangelistDialog2" timestamp="1593510355839">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="574" y="135" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593510100750" />
+    <state x="574" y="135" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593510355839" />
     <state x="634" y="260" key="FileChooserDialogImpl" timestamp="1593496303310">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -241,10 +250,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593253784527" />
-    <state x="659" y="366" key="com.intellij.ide.util.TipDialog" timestamp="1593509851903">
+    <state x="552" y="274" key="Vcs.Push.Dialog.v2" timestamp="1593510368411">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="659" y="366" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593509851903" />
+    <state x="552" y="274" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593510368411" />
+    <state x="659" y="366" key="com.intellij.ide.util.TipDialog" timestamp="1593510486064">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="659" y="366" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593510486064" />
+    <state x="759" y="333" key="git4idea.merge.GitMergeDialog" timestamp="1593510418222">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="759" y="333" key="git4idea.merge.GitMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593510418222" />
+    <state x="665" y="333" key="git4idea.merge.GitPullDialog" timestamp="1593510458699">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="665" y="333" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593510458699" />
     <state x="616" y="242" key="run.anything.popup" timestamp="1593496214884">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
