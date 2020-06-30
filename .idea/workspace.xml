@@ -7,7 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="694c2fe1-5f44-4cf8-8bcd-4b5ba54c8696" name="Default Changelist" comment="Default Changelist">
+      <change afterPath="$PROJECT_DIR$/src/com/news/action/NewsSearchServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineNews.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineNews.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/SignError.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/SignError.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/action/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/action/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/action/SignUpServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/action/SignUpServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/dao/NewsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/dao/NewsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/dao/impl/NewsDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/dao/impl/NewsDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/dao/impl/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/entity/News.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/entity/News.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/utils/DButils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/WEB-INF/classes/com/news/utils/DButils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineNews_war_exploded/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/META-INF/OnlineNews.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/action/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/action/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/action/SignUpServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/action/SignUpServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/NewsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/NewsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/impl/NewsDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/impl/NewsDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/impl/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/entity/News.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/entity/News.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/utils/DButils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/utils/DButils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +42,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="ONTO" value="refs/remotes/origin/master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,11 +92,11 @@
       <recent name="C:\WorkSpace\OnlineNews\web" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/OnlineNews/web/index.html" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.36">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:12058/OnlineNews/web/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 9.0.36" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.36" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 9.0.36" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat " ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="OnlineNews:war exploded">
           <settings>
@@ -85,6 +112,39 @@
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="13668" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -107,6 +167,10 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.36" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
@@ -118,7 +182,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="完成" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -140,6 +214,7 @@
       <workItem from="1593269923069" duration="45000" />
       <workItem from="1593478736023" duration="20068000" />
       <workItem from="1593509848833" duration="616000" />
+      <workItem from="1593510485505" duration="1003000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1593510091793</created>
@@ -155,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593510113073</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Default Changelist">
+      <created>1593510506682</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1593510506682</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,10 +252,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1593485557622" />
-    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593253725409">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="690" y="188" key="#Tomcat_Server" timestamp="1593511080683">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="690" y="188" key="#Tomcat_Server/0.0.1920.1080@0.0.1920.1080" timestamp="1593511080683" />
+    <state x="552" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593511087799">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593253725409" />
+    <state x="552" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593511087798" />
     <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser" timestamp="1593504538901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -182,6 +269,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="811" y="430" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593509963962" />
+    <state x="690" y="188" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1593511086705">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="690" y="188" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1920.1080@0.0.1920.1080" timestamp="1593511086705" />
     <state x="790" y="213" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1593254234812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -190,70 +281,84 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593502494201" />
-    <state x="574" y="135" key="CommitChangelistDialog2" timestamp="1593510355839">
+    <state x="574" y="135" key="CommitChangelistDialog2" timestamp="1593510505996">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="574" y="135" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593510355839" />
-    <state x="634" y="260" key="FileChooserDialogImpl" timestamp="1593496303310">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="574" y="135" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593510505996" />
+    <state x="634" y="270" key="FileChooserDialogImpl" timestamp="1593511078433">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="634" y="260" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593496303310" />
-    <state width="1281" height="258" key="GridCell.Tab.0.bottom" timestamp="1593507483546">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483546" />
-    <state width="1281" height="258" key="GridCell.Tab.0.center" timestamp="1593507483546">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483546" />
-    <state width="1281" height="258" key="GridCell.Tab.0.left" timestamp="1593507483546">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483546" />
-    <state width="1281" height="258" key="GridCell.Tab.0.right" timestamp="1593507483546">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483546" />
-    <state width="1281" height="258" key="GridCell.Tab.1.bottom" timestamp="1593507483488">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
-    <state width="1281" height="258" key="GridCell.Tab.1.center" timestamp="1593507483488">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
-    <state width="1281" height="258" key="GridCell.Tab.1.left" timestamp="1593507483488">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
-    <state width="1281" height="258" key="GridCell.Tab.1.right" timestamp="1593507483488">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
-    <state width="1281" height="258" key="GridCell.Tab.2.bottom" timestamp="1593507483488">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
-    <state width="1281" height="258" key="GridCell.Tab.2.center" timestamp="1593507483488">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
-    <state width="1281" height="258" key="GridCell.Tab.2.left" timestamp="1593507483488">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
-    <state width="1281" height="258" key="GridCell.Tab.2.right" timestamp="1593507483488">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1281" height="258" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1593253784527">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593253784527" />
-    <state x="552" y="274" key="Vcs.Push.Dialog.v2" timestamp="1593510368411">
+    <state x="634" y="270" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1593511078433" />
+    <state width="630" height="295" key="GridCell.Tab.0.bottom" timestamp="1593511486415">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="274" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593510368411" />
+    <state width="1281" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483546" />
+    <state width="630" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state width="630" height="295" key="GridCell.Tab.0.center" timestamp="1593511486415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483546" />
+    <state width="630" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state width="630" height="295" key="GridCell.Tab.0.left" timestamp="1593511486414">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483546" />
+    <state width="630" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486414" />
+    <state width="630" height="295" key="GridCell.Tab.0.right" timestamp="1593511486415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483546" />
+    <state width="630" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state width="630" height="295" key="GridCell.Tab.1.bottom" timestamp="1593511486415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
+    <state width="630" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state width="630" height="295" key="GridCell.Tab.1.center" timestamp="1593511486415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
+    <state width="630" height="295" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state width="630" height="295" key="GridCell.Tab.1.left" timestamp="1593511486415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
+    <state width="630" height="295" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state width="630" height="295" key="GridCell.Tab.1.right" timestamp="1593511486415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
+    <state width="630" height="295" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state width="630" height="295" key="GridCell.Tab.2.bottom" timestamp="1593511486415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
+    <state width="630" height="295" key="GridCell.Tab.2.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state width="630" height="295" key="GridCell.Tab.2.center" timestamp="1593511486415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
+    <state width="630" height="295" key="GridCell.Tab.2.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state width="630" height="295" key="GridCell.Tab.2.left" timestamp="1593511486415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
+    <state width="630" height="295" key="GridCell.Tab.2.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state width="630" height="295" key="GridCell.Tab.2.right" timestamp="1593511486415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="258" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593507483488" />
+    <state width="630" height="295" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593511486415" />
+    <state x="424" y="63" width="1040" height="948" key="SettingsEditor" timestamp="1593511152499">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593253784527" />
+    <state x="424" y="63" width="1040" height="948" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593511152499" />
+    <state x="552" y="274" key="Vcs.Push.Dialog.v2" timestamp="1593510586676">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="274" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593510586676" />
     <state x="659" y="366" key="com.intellij.ide.util.TipDialog" timestamp="1593510486064">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -262,10 +367,18 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="759" y="333" key="git4idea.merge.GitMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593510418222" />
-    <state x="665" y="333" key="git4idea.merge.GitPullDialog" timestamp="1593510458699">
+    <state x="665" y="333" key="git4idea.merge.GitPullDialog" timestamp="1593510538795">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="665" y="333" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593510458699" />
+    <state x="665" y="333" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593510538795" />
+    <state x="763" y="406" key="git4idea.rebase.GitRebaseDialog" timestamp="1593510574433">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="763" y="406" key="git4idea.rebase.GitRebaseDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593510574433" />
+    <state x="701" y="283" key="git4idea.rebase.GitRebaseEditor" timestamp="1593510577746">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="701" y="283" key="git4idea.rebase.GitRebaseEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593510577746" />
     <state x="616" y="242" key="run.anything.popup" timestamp="1593496214884">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
