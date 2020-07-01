@@ -3,7 +3,6 @@ package com.news.dao;
 import com.news.entity.News;
 import com.news.utils.NewsDButils;
 
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
