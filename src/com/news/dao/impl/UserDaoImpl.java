@@ -30,8 +30,18 @@ public class UserDaoImpl extends DButils implements UserDao {
     }
 
     @Override
-    public int insert(com.news.entity.User user) {
-        return 0;
+    public int insert(User user) {
+        //给占位符赋值
+        Object params [] ={null,user.getUserName(),user.getUserPhone(),
+                user.getUserEmail(),user.getUserPwd(),user.getUserImg()};
+
+        //要执行的sql语句
+        String sql="insert into user values(?,?,?,?,?,?)";
+        int i= doUpdate(sql,params);
+
+        //释放资源
+        getClose();
+        return i;
     }
 
     @Override

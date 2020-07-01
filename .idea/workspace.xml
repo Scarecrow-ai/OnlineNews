@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="694c2fe1-5f44-4cf8-8bcd-4b5ba54c8696" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,11 +164,6 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="完成" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -191,6 +187,7 @@
       <workItem from="1593478736023" duration="20068000" />
       <workItem from="1593509848833" duration="616000" />
       <workItem from="1593510485505" duration="1098000" />
+      <workItem from="1593582386742" duration="479000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1593510091793</created>
@@ -220,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593511542206</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Default Changelist">
+      <created>1593582539472</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593582539472</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,10 +268,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593502494201" />
-    <state x="574" y="135" width="772" height="887" key="CommitChangelistDialog2" timestamp="1593582502140">
+    <state x="574" y="135" width="772" height="887" key="CommitChangelistDialog2" timestamp="1593583004974">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="574" y="135" width="772" height="887" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593582502140" />
+    <state x="574" y="135" width="772" height="887" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593583004974" />
     <state x="184" y="92" key="DiffContextDialog" timestamp="1593511530088">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -342,10 +346,10 @@
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593253784527" />
     <state x="424" y="63" width="1040" height="948" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593511152499" />
-    <state x="552" y="274" key="Vcs.Push.Dialog.v2" timestamp="1593511582210">
+    <state x="552" y="274" key="Vcs.Push.Dialog.v2" timestamp="1593582573022">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="274" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593511582210" />
+    <state x="552" y="274" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593582573022" />
     <state x="659" y="366" key="com.intellij.ide.util.TipDialog" timestamp="1593582418376">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -354,10 +358,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="759" y="333" key="git4idea.merge.GitMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593510418222" />
-    <state x="665" y="333" key="git4idea.merge.GitPullDialog" timestamp="1593510538795">
+    <state x="665" y="333" key="git4idea.merge.GitPullDialog" timestamp="1593583013767">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="665" y="333" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593510538795" />
+    <state x="665" y="333" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593583013767" />
     <state x="763" y="406" key="git4idea.rebase.GitRebaseDialog" timestamp="1593510574433">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
