@@ -110,30 +110,13 @@ h1 {
 	text-align:center;
 	font-size:45px;
 	color:#fff;
-	padding:40px 0;
+	padding:40px 0px;
 	text-transform:uppercase;
 	font-weight: 300;
 	font-family: 'Nunito', sans-serif;
 }
-h3{
-	font-weight: 300;
-	font-family: 'Muli', sans-serif;
-	color: #fff;
-	padding:10px 40px 10px 10px;
-	width: 60%;
-	margin-left: 11%;
-	border:1px solid white;
-	border-radius: 4px;
-	text-align: left;
-}
-.special{
-	position: absolute;
-	left: 30%;
-	top: 72%;
-	width: 40%;
-}
-.content2 h2 {
-	font-size:30px;
+.content1 h2 {
+	font-size:40px;
 	padding: 10px 0 0;
 	color:#fff;
 	font-weight: 300;
@@ -148,32 +131,103 @@ h3{
 	font-family: 'Nunito', sans-serif;
 	text-align:center;
 }
-.log {
-	width:75%;
-	margin:0 auto;
-}
+
 .content1 {
-	width: 48%;
+	width: 40%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.21);
     padding: 30px 0;
-    float: left;
-    border-radius: 0px;
-}
-.button-row {
-	width:100%;
-	margin-top:1%;
-	padding-bottom:60px;
-}
-
-.content2 {
-	width:40%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.21);
-	padding: 30px 0 70px;
 	border-radius: 0px;
 	margin-left: auto;
 	margin-right: auto;
+}
+.content1 input[type="text"] {
+	padding:10px 40px 10px 10px;
+	width:50%;
+	border:1px solid #fff;
+	color:#fff;
+	text-align:left;
+	outline:none;
+	font-size:18px;
+	
+	margin-top:8%;
+	font-weight: 300;
+	font-family: 'Muli', sans-serif;
+	/*-- W3Layouts --*/
+	border-radius: 4px;
+}
+.content1 input[type="password"] {
+	padding:10px 40px 10px 10px;
+	width:50%;
+	border:1px solid #fff;
+	color:#fff;
+	text-align:left;
+	outline:none;
+	font-size:18px;
+	margin-top:10%;
+	font-weight: 300;
+	font-family: 'Muli', sans-serif;
+	border-radius: 4px;
+}
+.button-row {
+	width:100%;
+	margin-top:10%;
+	padding-bottom:20px;
+}
+.sign-in {
+	padding:10px;
+	background-color:crimson;
+	width:25%;
+	border:none;
+	cursor:pointer;
+	color:#fff;
+	font-weight: 300;
+	font-family: 'Nunito', sans-serif;
+	font-size:20px;
+	margin-left:62px;
+	float:left;
+	text-transform:uppercase;
+	border-radius:4px;
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
+.sign-in:hover {
+	background-color: crimson;
+	color:#fff;
+}
+.reset {
+	padding:10px;
+	background-color:#397b9a;
+	width:25%;
+	border:none;
+	/*-- AgileITS --*/
+	cursor:pointer;
+	color:#fff;
+	font-size:20px;
+	float:right;
+	margin-right:62px;
+	font-weight: 300;
+	font-family: 'Nunito', sans-serif;
+	text-transform:uppercase;
+	border-radius:4px;
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
+.reset:hover {
+	background-color:#397b9a;
+	color:#fff;	
+}
+.content2 {
+	width:48%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.21);
+    float:right;
+	padding: 30px 0 70px;
+    border-radius: 0px;
 }
 .content2 input[type="text"] {
 	padding:10px 40px 10px 10px;
@@ -182,47 +236,36 @@ h3{
 	color:#fff; 
 	text-align:left;
 	outline:none;
-	font-size:15px;
+	font-size:18px;
 	background:url(../images/person.png) no-repeat 440px 10px;
 	margin-top:5%;
 	font-weight: 300;
 	font-family: 'Muli', sans-serif;
 	border-radius: 4px;
 }
-.content2 input[type="file"] {
-	opacity: 0;
-	padding:20px 40px 0px 10px;
-	width:52%;
-	color:#fff; 
-	outline:none;
-	font-size:15px;
-	margin-top:0;
-	font-weight: 300;
-	font-family: 'Muli', sans-serif;
-	border-radius: 4px;
-}
-.content2 input[type="tel"] {
+
+.content1 input[type="tel"] {
 	padding:10px 40px 10px 10px;
-	width:70%;
+	width:50%;
 	border:1px solid white;
 	color:#fff; 
 	text-align:left;
 	outline:none;
-	font-size:15px;
+	font-size:18px;
 	background:url(../images/phone.png) no-repeat 440px 10px;
 	margin-top:4%;
 	font-weight: 300;
 	font-family: 'Muli', sans-serif;
 	border-radius: 4px;
 }
-.content2 input[type="email"] {
+.content1 input[type="email"] {
 	padding:10px 40px 10px 10px;
-	width:70%;
+	width:50%;
 	border:1px solid white;
 	color:#fff; 
 	text-align:left;
 	outline:none;
-	font-size:15px;
+	font-size:18px;
 	background:url(../images/mail.png) no-repeat 440px 10px;
 	margin-top:4%;
 	font-family: 'Muli', sans-serif;
@@ -235,55 +278,20 @@ h3{
 	color:#fff;
 	text-align:left;
 	outline:none;
-	font-size:15px;
+	font-size:18px;
 	background:url(../images/lock.png) no-repeat 440px 10px;
 	margin-top:4%;
 	font-weight: 300;
 	font-family: 'Muli', sans-serif;
 	border-radius: 4px;
 }
-.back {
-	padding:10px;
-	background-color:yellowgreen;
-	width:25%;
-	border:none;
-	cursor:pointer;
-	color:#fff;
-	font-weight: 300;
-	font-family: 'Nunito', sans-serif;
-	font-size:20px;
-	margin-top:7%;
-	text-transform:uppercase;
-	float: left;
-	margin-left: 68px;
-	border-radius:4px;
-}
-.back:hover {
-	background-color:yellowgreen;
-	color:white;
-}
-.register {
-	padding:10px;
-	background-color:#397b9a;
-	width:25%;
-	border:none;
-	cursor:pointer;
-	color:#fff;
-	float:right;
-	font-weight: 300;
-	font-family: 'Nunito', sans-serif;
-	font-size:20px;
-	margin-top:7%;
-	text-transform:uppercase;
-	margin-right: 68px;
-	border-radius:4px;
-}
+
 .register:hover {
 	background-color:#376D29;
 	color:white;
 }
 .footer {
-	margin-top:1%;
+	margin-top:3%;
 	padding:20px 0;
 	text-align:center;
 }
@@ -302,13 +310,6 @@ h3{
 .footer a:hover {
 	color:#c0392b;
 	transition: all 0.5s ease-in-out;
-}
-
-#tou_xiang{
-	border:1px solid white;
-	position: relative;
-	margin-top: 4.5%;
-	left:5%;
 }
 
 /*-- responsive-mediaquries --*/
@@ -720,7 +721,8 @@ h3{
 	font-size:16px;	
 	}
 	.log {
-	margin:0 auto 50px;	
+	margin-left: auto ;	
+	margin-right: auto;
 	}
 }
 

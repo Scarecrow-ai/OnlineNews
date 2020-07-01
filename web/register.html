@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
 <head>
-<title>Home</title>
+<title>注册</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
 <!-- font files  -->
 <link href='http://fonts.useso.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 <link href='http://fonts.useso.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
@@ -18,13 +18,34 @@
 <h1>在 线 新 闻 平 台</h1>
 	<div class="content2">
 		<h2>注&nbsp&nbsp&nbsp&nbsp册</h2>
-		<form action="register" method="post">
-			<input type="text" name="userid" placeholder="用户名（可包含字母或数字）">
-			<input type="tel" name="usrtel" placeholder="手机号">
-			<input type="email" name="email" placeholder="邮箱">
-            <input type="password" name="psw" placeholder="密码">
+		<form action="SignUpServlet" method="POST">
+
+            
+            <div class="special"><h3>点击上传头像 ( 支持png ,jpg ,gif文件 )</h3></div>
+			<input type="text" id="userid" name="userid" placeholder="用户名（可包含字母或数字）">
+			<input type="tel" id="usrtel" name="usrtel" placeholder="手机号">
+			<input type="email" id="email" name="email" placeholder="邮箱">
+            <input type="password" id="psw" name="psw" placeholder="密码">       
+            <input type="file" name="headPortrait" id="headPortrait">
+			<img id="tou_xiang" src="" height="41" width="41">
+            <script>
+                var fileInput = document.querySelector('input[type=file]'),
+                previewImg = document.querySelector('img');
+                fileInput.addEventListener('change', function () {
+                var file = this.files[0];
+                var reader = new FileReader();
+                // 监听reader对象的的onload事件，当图片加载完成时，把base64编码賦值给预览图片
+                reader.addEventListener("load", function () {
+                previewImg.src = reader.result;
+            }, false);
+            // 调用reader.readAsDataURL()方法，把图片转成base64
+            reader.readAsDataURL(file);
+            }, false);
+            </script>
+           
+			
             <div class="button-row">
-                <input type="button" class="back" value="返回">
+                <input type="button" class="back" value="返回" onclick="window.location.href='index2.html'">
                 <input type="submit" class="register" value="确定">
             </div>
             
