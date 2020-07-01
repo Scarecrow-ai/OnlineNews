@@ -6,11 +6,12 @@
 
 
     <filter>
-        <filter-name></filter-name>
+        <filter-name>SignFilter</filter-name>
+        <filter-class>com.news.filter.SignFilter</filter-class>
     </filter>
 
     <filter-mapping>
-        <filter-name></filter-name>
-        <url-pattern></url-pattern>
+        <filter-name>SignFilter</filter-name>
+        <url-pattern>SignFilter</url-pattern>
     </filter-mapping>
 </web-app>
