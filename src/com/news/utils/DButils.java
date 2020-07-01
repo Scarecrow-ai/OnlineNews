@@ -7,11 +7,11 @@ import java.sql.*;
  */
 public class DButils {
     //连接地址
-    private String url="jdbc:mysql://localhost:3306/news?useSSL=false&serverTimezone=UTC";
+    private String url = "jdbc:mysql://localhost:3306/news?useSSL=false&serverTimezone=UTC";
     //用户名
-    private String user="root";
+    private String user = "root";
     //用户密码
-    private String password="admin";
+    private String password = "abc123";
 
     private Connection conn=null;
     private PreparedStatement stmt=null;

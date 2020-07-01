@@ -5,11 +5,23 @@ import com.news.dao.NewsDao;
 import java.util.List;
 
 public class News {
-
     private int newsId;
+    private String newsTitle;
     private String newsText;
     private int newsCount;
     private String newsLabel;
+
+    public News(int id, String title, String text, int count, String label) {
+        newsId = id;
+        newsTitle = title;
+        newsText = text;
+        newsCount = count;
+        newsLabel = label;
+    }
+
+    public String getNewsTitle() {
+        return newsTitle;
+    }
 
     public int getNewsId() {
         return newsId;
@@ -25,23 +37,5 @@ public class News {
 
     public String getNewsLabel() {
         return newsLabel;
-    }
-
-
-    public void setNewsId(int id) {
-        this.newsId = id;
-    }
-
-    public void setNewsCount(int count) {
-        this.newsCount = count;
-    }
-
-    public void setNewsText(String text) {
-        this.newsText = text;
-    }
-
-    public void setNewsLabel(String label)
-    {
-        this.newsLabel=label;
     }
 }

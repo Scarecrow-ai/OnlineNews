@@ -1,41 +1,56 @@
 package com.news.dao;
 
 import com.news.entity.News;
+import com.news.utils.DButils;
+import com.news.utils.NewsDButils;
 
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface NewsDao {
     /**
-     * 添加
-     */
-     public int insert (News news);
-    /**
      * 删除
      */
-     public int delete (News news);
+    static boolean delete(News news) {
+        return false;
+    }
+
     /**
      * 修改
      */
-     public int update (News news);
+    static boolean update(News news) {
+        return false;
+    }
+
     /**
      * 查询
      */
-     public List<News> selectAll();
-    /**
-     * 通过浏览次数查询
-     */
-     public List<News> selectCount();
-    /**
-     * 通过标签查询国内或国外新闻
-     */
-     public List<News> selectLabel();
-    /**
-     * 通过关键词查询
-     */
-     public List<News> selectKey();
-    /**
-     * 通过id查询返回一个新闻对象
-     *
-     */
-     public News selectId();
+    static List<News> selectNews(String keyword) {
+        List<News> matchNews = new ArrayList<>();
+        String sql = "SELECT newsID, newsTitle, newsText, newsCount,newsLabel FROM news " +
+                "WHERE newsTitle REGEXP '" + keyword + "'";
+        ResultSet rs;
+        NewsDButils dButils = new NewsDButils();
+        try {
+            dButils.getConnect();
+            rs = dButils.selectTable(sql);
+            while (rs.next()) {
+                matchNews.add(
+                        new News(rs.getInt("newsId")
+                                , rs.getString("newsTitle")
+                                , rs.getString("newsText")
+                                , rs.getInt("newsCount")
+                                , rs.getString("newsLabel")
+                        )
+                );
+            }
+            dButils.getClose();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return matchNews;
+    }
 }
