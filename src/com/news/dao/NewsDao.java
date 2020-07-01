@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public interface NewsDao {
     /**
@@ -52,9 +53,17 @@ public interface NewsDao {
      * 查询
      */
     static List<News> selectNews(String keyword) {
+        String sql;
+
+        if (Pattern.matches("^Label:.*", keyword))            //按标签搜索
+        {
+            sql = "SELECT newsID, newsTitle, newsText, newsCount,newsLabel FROM news " +
+                    "WHERE newsLabel = '" + keyword.substring(6) + "'";
+        } else {                                                  //搜索标题
+            sql = "SELECT newsID, newsTitle, newsText, newsCount,newsLabel FROM news " +
+                    "WHERE newsTitle REGEXP '" + keyword + "'";
+        }
         List<News> matchNews = new ArrayList<>();
-        String sql = "SELECT newsID, newsTitle, newsText, newsCount,newsLabel FROM news " +
-                "WHERE newsTitle REGEXP '" + keyword + "'";
         ResultSet rs;
         NewsDButils dButils = new NewsDButils();
         try {

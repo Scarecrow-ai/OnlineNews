@@ -8,11 +8,10 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-//        List<News> result = new ArrayList<>();
-//        result.add(NewsDao.selectNews(1));
-//        for (News news : result) {
-//            System.out.println(news.getNewsTitle());
-//        }
-        NewsDao.delete(50);
+        List<News> result = new ArrayList<>();
+        result = NewsDao.selectNews("Label:hd");
+        for (News news : result) {
+            System.out.println(news.getNewsText());
+        }
     }
 }
