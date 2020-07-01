@@ -32,12 +32,12 @@ public class UserDaoImpl extends DButils implements UserDao {
     @Override
     public int insert(User user) {
         //给占位符赋值
-        Object params [] ={null,user.getUserName(),user.getUserPhone(),
-                user.getUserEmail(),user.getUserPwd(),user.getUserImg()};
+        Object params[] = {null, user.getUserName(), user.getUserPhone(),
+                user.getUserEmail(), user.getUserPwd(), user.getUserImg()};
 
         //要执行的sql语句
-        String sql="insert into user values(?,?,?,?,?,?)";
-        int i= doUpdate(sql,params);
+        String sql = "insert into user values(?,?,?,?,?,?)";
+        int i = doUpdate(sql, params);
 
         //释放资源
         getClose();
@@ -46,14 +46,14 @@ public class UserDaoImpl extends DButils implements UserDao {
 
     @Override
     public User selectName(User user) {
-        Object params[]={user.getUserName()};
-        String sql="select * from user where userName=? ";
+        Object params[] = {user.getUserName()};
+        String sql = "select * from user where userName=? ";
 
-        ResultSet rs =doQuery(sql,params);
+        ResultSet rs = doQuery(sql, params);
         //将学生对象声明出来,否则会成为try-catch语句中的局部变量
-        User user1 =new User();
+        User user1 = new User();
         try {
-            if(rs.next())//有这个学生
+            if (rs.next())//有这个学生
             {
 
                 //构造学生对象
@@ -65,8 +65,7 @@ public class UserDaoImpl extends DButils implements UserDao {
                 user1.setUserPwd(rs.getString(5));
                 user1.setUserImg(rs.getString(6));
 
-            }
-            else user1=null;
+            } else user1 = null;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

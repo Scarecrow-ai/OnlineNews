@@ -19,7 +19,7 @@ public class SignUpServlet extends HttpServlet {
 
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     }
 
@@ -27,32 +27,28 @@ public class SignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setCharacterEncoding("UTF-8");
-        String name1 =req.getParameter("userid");
-        String pwd1 =req.getParameter("psw");
+        String name1 = req.getParameter("userid");
+        String pwd1 = req.getParameter("psw");
 
 
-        User user1 =new User();
+        User user1 = new User();
         user1.setUserName(name1);
 
-        User user2=dao.selectName(user1);
+        User user2 = dao.selectName(user1);
 
         //判断是否存在该用户名
-        if(user2==null)
-        {
+        if (user2 == null) {
             resp.sendRedirect("SignError.jsp");
         }
         //判断存在该用户的情况下密码是否正确
-        else if(user2.getUserPwd().equals("pwd1"))
-        {
-            req.getSession().setAttribute("userName",name1);
+        else if (user2.getUserPwd().equals("pwd1")) {
+            req.getSession().setAttribute("userName", name1);
 
             resp.sendRedirect("main.html");
+        } else {
+            resp.sendRedirect("SignError.jsp");
         }
-        else {  resp.sendRedirect("SignError.jsp");}
     }
-
-
-
 
 
 }

@@ -13,13 +13,12 @@ public class DButils {
     //用户密码
     private String password = "abc123";
 
-    private Connection conn=null;
-    private PreparedStatement stmt=null;
-    private ResultSet rs=null;
+    private Connection conn = null;
+    private PreparedStatement stmt = null;
+    private ResultSet rs = null;
 
     //1.加载驱动
-    static
-    {
+    static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -28,55 +27,55 @@ public class DButils {
     }
 
     // 2.获取链接数据库的会话对象
-    private void getConnect()  {
+    private void getConnect() {
         try {
-            conn= DriverManager.getConnection(url,user,password);//这里不要写成Connection conn=.......这相当于新建了
+            conn = DriverManager.getConnection(url, user, password);//这里不要写成Connection conn=.......这相当于新建了
             //一个conn而不是最开始定义的那个全局变量conn
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public int doUpdate(String sqls,Object params[])  // 3.构造sql语句
+    public int doUpdate(String sqls, Object params[])  // 3.构造sql语句
     {
-        int i=0;
+        int i = 0;
         //调用连接对象的函数
         getConnect();
         try {
             //4.获取执行对象
-            stmt=conn.prepareStatement(sqls);
+            stmt = conn.prepareStatement(sqls);
 
             //判断是否给占位符赋值
-            if(params!=null&&params.length!=0) {
-                for(int j=0;j<params.length;j++){
-                    stmt.setObject(j+1,params[j]);
+            if (params != null && params.length != 0) {
+                for (int j = 0; j < params.length; j++) {
+                    stmt.setObject(j + 1, params[j]);
                 }
             }
             //5.执行sql语句，并处理执行状态结果
-            i=stmt.executeUpdate();
+            i = stmt.executeUpdate();
 
-            System.out.println("执行状态:"+i);
+            System.out.println("执行状态:" + i);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return i;
     }
+
     //查询操作的方法
-    public ResultSet doQuery(String sqls,Object params[])
-    {
+    public ResultSet doQuery(String sqls, Object params[]) {
         //调用连接对象的函数
         getConnect();
         try {
             //4.获取执行对象
-            stmt=conn.prepareStatement(sqls);
+            stmt = conn.prepareStatement(sqls);
             //判断是否给占位符赋值
-            if(params!=null&&params.length!=0) {
-                for(int j=0;j<params.length;j++){
-                    stmt.setObject(j+1,params[j]);
+            if (params != null && params.length != 0) {
+                for (int j = 0; j < params.length; j++) {
+                    stmt.setObject(j + 1, params[j]);
                 }
             }
             //5.执行sql语句，并处理执行状态结果
-            rs =  stmt.executeQuery();
+            rs = stmt.executeQuery();
 
 
         } catch (SQLException e) {
@@ -87,17 +86,17 @@ public class DButils {
 
 
     // 6.释放资源
-    public void getClose()  {
+    public void getClose() {
         try {
-            if(stmt!=null)
-            {
+            if (stmt != null) {
                 stmt.close();
             }
-            if(conn!=null)
-            {
+            if (conn != null) {
                 conn.close();
             }
-            if(rs!=null){rs.close();}
+            if (rs != null) {
+                rs.close();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -22,6 +22,7 @@ import java.util.List;
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
     UserDao dao = new UserDaoImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -33,9 +34,9 @@ public class RegisterServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
 
         String name = req.getParameter("userid");
-        String phone =req.getParameter("usrtel");
-        String email =req.getParameter("email");
-        String pwd =req.getParameter("psw");
+        String phone = req.getParameter("usrtel");
+        String email = req.getParameter("email");
+        String pwd = req.getParameter("psw");
 
         //创建实体用户对象
         User user1 = new User();
@@ -43,57 +44,51 @@ public class RegisterServlet extends HttpServlet {
 
         //查询用户名是否已存在
         User user2 = dao.selectName(user1);
-        if(user2==null)
-        {
+        if (user2 == null) {
             resp.sendRedirect("RegisterError.jsp");
         }
         //上传头像文件以及完成用户实体对象成员变量的设置
-        else
-            {
-                user1.setUserPhone(phone);
-                user1.setUserEmail(email);
-                user1.setUserPwd(pwd);
+        else {
+            user1.setUserPhone(phone);
+            user1.setUserEmail(email);
+            user1.setUserPwd(pwd);
 
-                //头像文件上传
-                DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
-                ServletFileUpload servletFileUpload=new ServletFileUpload(fileItemFactory);
-                try {
-                    List<FileItem> list=servletFileUpload.parseRequest(req);
-                    for(FileItem fileItem : list)
+            //头像文件上传
+            DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
+            ServletFileUpload servletFileUpload = new ServletFileUpload(fileItemFactory);
+            try {
+                List<FileItem> list = servletFileUpload.parseRequest(req);
+                for (FileItem fileItem : list) {
+                    if (fileItem.isFormField()) {
+                        String name2 = fileItem.getFieldName();
+                        String value = fileItem.getString("UTF-8");
+                    } else//是文件形式
                     {
-                        if(fileItem.isFormField())
-                        {
-                            String name2 =fileItem.getFieldName();
-                            String value =fileItem.getString("UTF-8");
-                        }
-                        else//是文件形式
-                        {
-                            String fileName =fileItem.getName();
-                            long size =fileItem.getSize();
+                        String fileName = fileItem.getName();
+                        long size = fileItem.getSize();
 
-                            InputStream inputStream =fileItem.getInputStream();
-                            String path=req.getServletContext().getRealPath("file/"+name);
-                            //设置用户头像文件的绝对路径
-                            user1.setUserImg(path);
-                            OutputStream outputStream =new FileOutputStream(path);
+                        InputStream inputStream = fileItem.getInputStream();
+                        String path = req.getServletContext().getRealPath("file/" + name);
+                        //设置用户头像文件的绝对路径
+                        user1.setUserImg(path);
+                        OutputStream outputStream = new FileOutputStream(path);
 
-                            outputStream.close();
-                            inputStream.close();
-                        }
+                        outputStream.close();
+                        inputStream.close();
                     }
-                } catch (FileUploadException e) {
-                    e.printStackTrace();
                 }
-
-
+            } catch (FileUploadException e) {
+                e.printStackTrace();
             }
+
+
+        }
         //添加该用户到数据库
         int i = dao.insert(user1);
-        if(i>0)
-        {
+        if (i > 0) {
             resp.sendRedirect("RegisterSuccess.jsp");
+        } else {
         }
-        else {}
 
     }
 }

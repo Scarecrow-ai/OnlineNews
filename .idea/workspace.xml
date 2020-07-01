@@ -7,21 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="694c2fe1-5f44-4cf8-8bcd-4b5ba54c8696" name="Default Changelist" comment="Default Changelist">
-      <change afterPath="$PROJECT_DIR$/src/com/news/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/news/utils/NewsDButils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineNews.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineNews.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/action/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/action/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/action/SignUpServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/action/SignUpServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/NewsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/NewsDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/impl/NewsDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/entity/News.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/entity/News.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineNews/com/news/utils/DButils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineNews/com/news/utils/DButils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/news/action/NewsSearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/news/action/NewsSearchServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/news/dao/NewsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/news/dao/NewsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/news/dao/impl/NewsDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/news/entity/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/news/entity/News.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/news/action/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/news/action/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/news/action/SignUpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/news/action/SignUpServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/news/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/news/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/news/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/news/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/news/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/news/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/news/filter/SignFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/news/filter/SignFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/news/utils/DButils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/news/utils/DButils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -223,7 +214,7 @@
       <workItem from="1593478736023" duration="20068000" />
       <workItem from="1593509848833" duration="616000" />
       <workItem from="1593510485505" duration="1098000" />
-      <workItem from="1593582386742" duration="8403000" />
+      <workItem from="1593582386742" duration="8726000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1593510091793</created>
@@ -274,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593583548009</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Default Changelist">
+      <created>1593591077262</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1593591077262</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,6 +281,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Default Changelist" />
     <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1593485557622">
@@ -320,14 +319,14 @@
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593502494201" />
     <state x="690" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593587763105" />
-    <state x="712" y="398" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1593591008093">
+    <state x="712" y="398" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1593591139087">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="712" y="398" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1080@0.0.1920.1080" timestamp="1593591008093" />
-    <state x="574" y="135" width="772" height="887" key="CommitChangelistDialog2" timestamp="1593591024545">
+    <state x="712" y="398" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1080@0.0.1920.1080" timestamp="1593591139087" />
+    <state x="574" y="135" width="772" height="887" key="CommitChangelistDialog2" timestamp="1593591177775">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="574" y="135" width="772" height="887" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593591024545" />
+    <state x="574" y="135" width="772" height="887" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593591177775" />
     <state x="184" y="92" key="DiffContextDialog" timestamp="1593511530088">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
