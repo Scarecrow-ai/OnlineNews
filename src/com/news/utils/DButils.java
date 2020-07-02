@@ -11,7 +11,7 @@ public class DButils {
     //用户名
     private String user = "root";
     //用户密码
-    private String password = "admin";
+    private String password = "abc123";
 
     private Connection conn = null;
     private PreparedStatement stmt = null;

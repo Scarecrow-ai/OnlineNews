@@ -35,8 +35,10 @@ public interface NewsDao {
         boolean updateFinished = false;
         String sql = "UPDATE news SET newsTitle='" + news.getNewsTitle() +
                 "' , newsText='" + news.getNewsText()
-                + "', newsLabel='" + news.getNewsLabel() + "'"
-                + "WHERE newsId=" + news.getNewsId();
+                + "', newsLabel='" + news.getNewsLabel()
+                + "', newsCount=" + news.getNewsCount()
+                + " WHERE newsId=" + news.getNewsId();
+
         NewsDButils dButils = new NewsDButils();
         try {
             dButils.getConnect();
@@ -58,7 +60,7 @@ public interface NewsDao {
         if (Pattern.matches("^Label:.*", keyword))            //按标签搜索
         {
             sql = "SELECT newsID, newsTitle, newsText, newsCount,newsLabel FROM news " +
-                    "WHERE newsLabel = '" + keyword.substring(6) + "'";
+                    "WHERE newsLabel REGEXP '" + keyword.substring(6) + "'";
         } else {                                                  //搜索标题
             sql = "SELECT newsID, newsTitle, newsText, newsCount,newsLabel FROM news " +
                     "WHERE newsTitle REGEXP '" + keyword + "'";

@@ -21,11 +21,6 @@
 <div class="top_wrap">
     <div class="clearfix top w1200">
         <div class="fl top_left"><a href="main.html" title="在线新闻平台">首页</a></div>
-        <ul class="fr clearfix top_right">
-            <li class="register"><img id="headPortrait" name="headPortrait" height="40px" width="40px"
-                                      src="images/moren.jpg" alt="头像"></li>
-            <li class="login" id="userid" name="uesrid">暂未登录</li>
-        </ul>
     </div>
 </div>
 <!--/top-->
@@ -33,166 +28,83 @@
 <div class="w1200 head clearfix">
     <img src="images/logo1.png" alt="logo">
     <div class="search fr mt33">
-        <form action="" method="post">
+        <form action="channel_page_test.html" method="get">
             <div class="searchBox clearfix">
-                <input class="fl" name="text" type="text" placeholder="请输入所搜新闻关键字"
-                       onFocus="if(this.value=='请输入所搜咨讯关键字'){this.value=''}"
-                       onblur="if(this.value==''){this.value='请输入所搜咨讯关键字'}"/>
-                <input class="fl zoom" value="" type="submit"/>
+                <input class="fl" name="keyword" type="text" placeholder="请输入所搜新闻关键字" />
+                <input class="fl zoom" value="" type="submit" />
             </div>
         </form>
-
     </div>
 </div>
 <!--head-->
 <!--Cnav-->
-<div class="Cnav_wrap">
-    <ul class="w1200 Cnav mb20 clearfix">
-        <li><a href="main.html">新闻首页</a></li>
-        <li><a href="column_page.html">国内</a></li>
-        <li><a href="column_page.html">国际</a></li>
-        <li><a href="column_page.html">军事</a></li>
-        <li><a href="column_page.html">财经</a></li>
-        <li><a href="column_page.html">娱乐</a></li>
-        <li><a href="column_page.html">体育</a></li>
-        <li><a href="column_page.html">科技</a></li>
-        <li><a href="column_page.html">游戏</a></li>
-    </ul>
-</div>
 <!--/Cnav-->
 <div class="column_market w1200 pt20 clearfix">
     <!--left-->
     <div class="detail_left fl">
-        <ul class="clearfix title">
-            <li><a href="javascript:;">资讯首页 > </a></li>
-            <li><a href="javascript:;">市场 ></a></li>
-            <li><a href="javascript:;">动态 ></a></li>
-            <li><a href="javascript:;">正文</a></li>
-        </ul>
         <div class="artical" id="artical"></div>
         <div class="clearfix information">
             <dl class="fl left">
-                <dt class="clearfix"><a href="javascript:;" class="fl">相关资讯</a><a href="javascript:;" class="fr">更多></a>
-                </dt>
-                <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span
-                        class="fr">[02-22]</span></dd>
-                <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>气动工具成为五金行业的中坚力量价气动工具成为气动</a><span
-                        class="fr">[02-22]</span></dd>
-                <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span
-                        class="fr">[02-22]</span></dd>
-                <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>气动工具成为五金行业的中坚力量价气动工具成为气动</a><span
-                        class="fr">[02-22]</span></dd>
-            </dl>
-            <dl class="fr">
-                <dt class="clearfix"><a href="javascript:;" class="fl">相关资讯</a><a href="javascript:;" class="fr">更多></a>
-                </dt>
-                <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span
-                        class="fr">[02-22]</span></dd>
-                <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>气动工具成为五金行业的中坚力量价气动工具成为气动</a><span
-                        class="fr">[02-22]</span></dd>
-                <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span
-                        class="fr">[02-22]</span></dd>
-                <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>气动工具成为五金行业的中坚力量价气动工具成为气动</a><span
-                        class="fr">[02-22]</span></dd>
-            </dl>
-            <dl class="fl left">
                 <dt class="clearfix"><a href="javascript:;" class="fl">评论</a></dt>
                 <dd class="fl clearfix top_left">
-                    <ul class="fl clearfix top_left">
-                        <li class="register"><img id="headPortrait" name="headPortrait" height="30px" width="30px"
-                                                  src="images/moren.jpg" alt="头像"><span id="userid">用户名1</span>
-                            ：<span id="comments">评论1</span>
-                        </li>
-                        <li class="register"><img id="headPortrait" name="headPortrait" height="30px" width="30px"
-                                                  src="images/moren.jpg" alt="头像"><span id="userid">用户名2</span>
-                            ：<span id="comments">评论2</span>
-                        </li>
-                        <li class="register"><img id="headPortrait" name="headPortrait" height="30px" width="30px"
-                                                  src="images/moren.jpg" alt="头像"><span id="userid">用户名3</span>
-                            ：<span id="comments">评论3</span>
-                        </li>
-                    </ul>
-
+                    <ul class="fl clearfix top_left" id="review_area"></ul>
                 </dd>
 
             </dl>
             <dl class="fr">
                 <dt class="clearfix"><a href="javascript:;" class="fl">发表评论</a></dt>
-                <form action="ReviewServlet" method="POST" enctype="multipart/form-data">
-                    <textarea name="" id="" cols="50" rows="6"></textarea><br>
-                    <input type="submit" value="发表">
+                <form name="comments_form" method="POST" enctype="x-www-form-urlencoded">
+                    <textarea name="text" id="" cols="50" rows="6"></textarea><br>
+                    <button onclick="postReview()">提交</button>
                 </form>
-
             </dl>
         </div>
+<script>
+    $(function () {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var responseText = xmlhttp.responseText;
+                var jsonArray = JSON.parse(responseText);
+                var resultHTML = "";
 
+                $(jsonArray).each(function(){
+                    var userName =this.userName;
+                    var text = this.text;
+                    resultHTML = resultHTML + "<li class=\"register\"><span id=\"userName\">"+userName+"</span>\n" +
+                        "：<span id=\"comments\">"+text+"</span>\n" +
+                        "</li>";
+                });
+                document.getElementById("review_area").innerHTML = resultHTML;
+            }
+        }
+
+        xmlhttp.open("POST", "/OnlineNews_war_exploded/getReview?newsId=" + getParams("newsId"), true);
+        xmlhttp.send();
+    });
+    function postReview() {
+        document.comments_form.action = "review?newsId=" + getParams("newsId");
+        document.comments_form.submit();
+    }
+</script>
 
         <!--热门-->
     </div>
     <!--/left-->
     <!--right-->
     <div class="right fr">
-        <div class="news_right fr">
-            <div class="kuaibao">
-                <div class="title clearfix">
-                    <a href="javascript:;" class="fl a1">时事新闻</a>
-                    <a href="#" class="reflesh fr"><i><img src="images/reflesh.png"></i>刷新</a>
-                </div>
-                <ul class="mt20">
-                    <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-                    <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-                    <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-                    <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-                    <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-
-                    <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-                </ul>
-            </div>
-
         </div>
         <!--热文榜-->
         <div class="classify pt10">
-            <div class="hot">
-                <div class="title">热文榜</div>
-                <div class="tab-hd mb20">
-                    <ul class="tab-nav clearfix">
-                        <li class="on"><a href="javascript:;
-    ">日排行</a></li>
-                        <li><a href="javascript:;
-    ">周排行</a></li>
-                    </ul>
-                </div>
-                <div class="tab-bd2">
-                    <div class="tab-pal">
-                        <ul>
-                            <li><span class="on">1</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                            <li><span class="on">2</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                            <li><span class="on">3</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                            <li><span class="on">4</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                            <li><span>5</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                            <li><span>6</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                            <li><span>7</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                            <li><span>8</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                            <li><span>9</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                            <li><span>10</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-pal">
-                        <ul>
-                            <li><span class="on">1</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                            <li><span class="on">2</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商</a></li>
-                            <li><span class="on">3</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                            <li><span class="on">4</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                            <li><span>5</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                            <li><span>6</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                            <li><span>7</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                            <li><span>8</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                            <li><span>9</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                            <li><span>10</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <!--/热文榜-->
 
@@ -277,11 +189,11 @@
             // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var json = xmlhttp.responseText;
-                var obj =JSON.parse(json);
+                var obj = JSON.parse(json);
 
                 document.getElementById("artical").innerHTML =
                     "<h1><a href=\"javascript:;\">" + obj.newsTitle + "</a></h1>"
-                +obj.newsText;
+                    + obj.newsText;
             }
         }
         // alert("/newsDetail?newsId=" + getParams("newsId"));
@@ -298,7 +210,7 @@
             return unescape(r[2]);
         }
         return null;
-    };
+    }
 </script>
 </body>
 </html>

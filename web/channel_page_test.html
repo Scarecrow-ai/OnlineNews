@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--自动选择更好的浏览器-->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>在线新闻平台</title>
+<!--seo-->
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<!--css-->
+<link type="text/css" rel="stylesheet" href="css/base.css">
+<link type="text/css" rel="stylesheet" href="css/index.css">
+<script src="js/jquery1.8.3.js"></script>
+<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+
+</head>
+<body>
+<!--top-->
+<div class="top_wrap">
+    <div class="clearfix top w1200">
+        <div class="fl top_left"><a href="main.html" title="在线新闻平台">首页</a></div>
+    </div>
+</div>
+<!--/top-->
+<!--head-->
+<div class="w1200 head clearfix">
+	<img src="images/logo1.png" alt="logo">
+    <div class="search fr mt33">
+        <form action="channel_page_test.html" method="get">
+            <div class="searchBox clearfix">
+                <input class="fl" name="keyword" type="text" placeholder="请输入所搜新闻关键字"
+                       onFocus="if(this.value=='请输入所搜咨讯关键字'){this.value=''}"
+                       onblur="if(this.value==''){this.value='请输入所搜咨讯关键字'}"/>
+                <input class="fl zoom" value="" type="submit"/>
+            </div>
+        </form>
+       
+    </div>
+</div>
+<!--head-->
+<!--Cnav-->
+<!--/Cnav-->
+<div class="column_market w1200 pt20 clearfix">
+    <!--center-->
+    <div class="fl column_center">
+        <h2><span id="search_result"></span> 搜索结果如下：</h2>
+        <ul class="li_list" id="li_list"></ul>
+    </div>
+    <!--/center-->
+    <!--right-->
+    <!--/right-->
+ </div>
+ 
+<!--footer-->
+<div class="footer">
+    <div class="w1200 clearfix">
+        <div class="fl copyright"> 
+            <p class="mt40">Copyright &copy; 2020.18级软院实训28组.</p>
+        </div>
+    </div>
+</div>
+<!--/footer-->
+<!--gotop-->
+<div>
+	<ul class="sibar">
+        <li class="li1"><a href="index.html" class="a1"><img src="images/erweima1.png" class="thisimg1"><i>登录</i></a></li>
+        <li class="li2"><a href="register.html" class="a2"><img src="images/feedback1.png" class="thisimg2"><i>注册</i></a></li>
+        <li class="li3"><a href="#" class="a3"><img src="images/go_top1.png" class="thisimg3"><i>返回顶部</i></a></li>
+    </ul>
+</div>
+<script>
+$(".thisimg1").mousemove(function(){
+  $(this).attr("src","images/erweima2.png")
+})
+$(".thisimg1").mouseout(function(){
+  $(this).attr("src","images/erweima1.png")
+})
+
+$(".thisimg2").mousemove(function(){
+  $(this).attr("src","images/feedback2.png")
+})
+$(".thisimg2").mouseout(function(){
+  $(this).attr("src","images/feedback1.png")
+})
+$(".thisimg3").mousemove(function(){
+  $(this).attr("src","images/go_top2.png")
+})
+$(".thisimg3").mouseout(function(){
+  $(this).attr("src","images/go_top1.png")
+})
+</script>
+<!--/gotop-->
+
+<script src="js/js.js"></script>
+<script>
+$(function() {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+        // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var responseText = xmlhttp.responseText;
+            var jsonArray = JSON.parse(responseText);
+            var resultHTML = "";
+
+            $(jsonArray).each(function () {
+                var url = "/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                var title = this.newsTitle;
+                resultHTML = resultHTML + "<li>\n<p class=\"p1\"><a href=\"" + url
+                    + "\">" + title + "</a></p>\n</li>";
+            });
+
+            document.getElementById("search_result").innerHTML = getParams("keyword");
+            document.getElementById("li_list").innerHTML = resultHTML;
+        }
+    }
+
+    xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=" + getParams("keyword"), true);
+    xmlhttp.send();
+
+    //专题切换
+    jQuery(".focus").slide({
+        titCell: ".tip li",
+        mainCell: ".news_pic ul",
+        effect: "left",
+        autoPlay: true,
+        delayTime: 200
+    });
+    //专题文字切换
+    jQuery(".focus").slide({
+        titCell: ".tip li",
+        mainCell: ".ifocus_tx ul",
+        effect: "left",
+        autoPlay: true,
+        delayTime: 200
+    });
+    //家装tab切换
+    jQuery(".shopping").slide({titCell: ".tab-hd li", mainCell: ".tab-bd", delayTime: 0});
+    jQuery(".shopping").slide({titCell: ".tab-hd li", mainCell: ".tab-bd1", delayTime: 0});
+    //热文榜
+    jQuery(".hot").slide({titCell: ".tab-hd li", mainCell: ".tab-bd2", delayTime: 0});
+})
+
+function getParams(key) {
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURI(r[2]);
+    }
+    return null;
+}
+</script>
+</body>
+</html>

@@ -17,6 +17,9 @@ public class NewsDetailServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int newsId = Integer.parseInt(req.getParameter("newsId"));
         News targetNews = NewsDao.selectNews(newsId);
+
+        updateNewsCount(targetNews);
+
         JSONObject newsDetail = new JSONObject();
         newsDetail.put("newsTitle", targetNews.getNewsTitle());
         newsDetail.put("newsText", targetNews.getNewsText());
@@ -29,4 +32,10 @@ public class NewsDetailServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
     }
+
+    private void updateNewsCount(News news) {
+        News result = new News(news.getNewsId(), news.getNewsTitle(), news.getNewsText(), news.getNewsCount() + 1, news.getNewsLabel());
+        NewsDao.update(result);
+    }
 }
+

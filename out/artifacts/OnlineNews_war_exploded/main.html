@@ -21,21 +21,35 @@
 <div class="top_wrap">
     <div class="clearfix top w1200">
         <div class="fl top_left"><a href="main.html" title="在线新闻平台">首页</a></div>
-        <ul class="fr clearfix top_right">
-            <li class="register"><img id="headPortrait" name="headPortrait" height="40px" width="40px"
-                                      src="images/moren.jpg" alt="头像"></li>
-            <li class="login" id="userid" name="uesrid"><span>暂未登录</span></li>
-        </ul>
+        <ul class="fr clearfix top_right" id="user"></ul>
     </div>
 </div>
+<script>
+    function getParams(key) {
+        var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return decodeURI(r[2]);
+        }
+        return null;
+    }
+    $(function () {
+        var imagePath = getParams("imgPath");
+        var userName = getParams("userName");
+        var resultHTML="<li class=\"register\"><img id=\"headPortrait\" name=\"headPortrait\" height=\"40px\" width=\"40px\" " +
+            "src=\""+imagePath +"\" alt=\"头像\"></li> \n" +
+            " <li class=\"login\" name=\"uesrid\"> <span id=\"userid\">"+userName+"</span> </li>  ";
+        document.getElementById("user").innerHTML = resultHTML;
+    })
+</script>
 <!--/top-->
 <!--head-->
 <div class="w1200 head clearfix">
 	<img src="images/logo1.png" alt="logo">
     <div class="search fr mt33">
-        <form action="" method="post">
+        <form action="channel_page_test.html" method="get">
             <div class="searchBox clearfix">
-                <input class="fl" name="text" type="text" placeholder="请输入所搜新闻关键字"/>
+                <input class="fl" name="keyword" type="text" placeholder="请输入所搜新闻关键字" />
                 <input class="fl zoom" value="" type="submit" />
             </div>          
         </form>
@@ -44,19 +58,6 @@
 </div>
 <!--head-->
 <!--nav-->
-<div class="Cnav_wrap">
-	<ul class="w1200 Cnav mb20 clearfix">
-        <li class="on"><a href="main.html">新闻首页</a></li>
-        <li><a href="column_page.html">国内</a></li>
-        <li><a href="column_page.html">国际</a></li>
-        <li><a href="column_page.html">军事</a></li>
-        <li><a href="column_page.html">财经</a></li>
-        <li><a href="column_page.html">娱乐</a></li>
-        <li><a href="column_page.html">体育</a></li>
-        <li><a href="column_page.html">科技</a></li>
-        <li><a href="column_page.html">游戏</a></li>
-    </ul>
-</div>
 <!--/nav-->
 <!--/ad-->
 <!--/ad-->
@@ -68,30 +69,26 @@
             <div class="news_pic">
                 <ul>
                     <!--a为单击图片后进入的页面-->
-                    <li><a href="javascript:;" target="_blank"><img src="img/index-img1.png"></a>
+                    <li><a href="detail_page_test.html?newsId=50"><img src="https://b.bdstatic.com/boxlib/20200703/2020070300004567993590934.jpg"></a>
                     </li>
-                    <li><a href="javascript:;" target="_blank"><img src="img/index-img1-2.png"></a>
+                    <li><a href="detail_page_test.html?newsId=51"><img src="https://b.bdstatic.com/boxlib/20200703/2020070300103966653246944.jpg"></a>
                     </li>
-                    <li><a href="javascript:;" target="_blank"><img src="img/index-img1-3.png"></a> 
+                    <li><a href="detail_page_test.html?newsId=52"><img src="http://sports.xinhuanet.com/c/2020-07/01/1126184390_15936071413191n.jpg"></a>
                     </li>
-                    <li><a href="javascript:;" target="_blank"><img src="img/index-img1.png"></a> 
-                    </li>
-                    <li><a href="javascript:;" target="_blank"><img src="img/index-img1-2.png"></a>
+                    <li><a href="detail_page_test.html?newsId=53"><img src="https://b.bdstatic.com/boxlib/20200703/2020070300103752426557429.jpg"></a>
                     </li>
                 </ul>
             </div>
 			<div class="ifocus_tx">
 				<ul>
-                    <li><a href="javascript:;" target="_blank">1</a></li>
-                    <li><a href="javascript:;" target="_blank">2</a></li>
-                    <li><a href="javascript:;" target="_blank">3</a></li>
-                    <li><a href="javascript:;" target="_blank">4</a></li>
-                    <li><a href="javascript:;" target="_blank">5</a></li>
+                    <li><a href="detail_page_test.html?newsId=50" >科威特进入复工复产第二阶段</a></li>
+                    <li><a href="detail_page_test.html?newsId=51" >日本“出云”号改装成真航母现场曝光</a></li>
+                    <li><a href="detail_page_test.html?newsId=52" >CBA复赛第一阶段：新疆伊力特胜青岛国信双星</a></li>
+                    <li><a href="detail_page_test.html?newsId=53" >湖南凤凰中华大熊猫苑开园</a></li>
             	</ul>
 			</div>
             <div class="tip">
                 <ul>
-                    <li></li>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -110,43 +107,47 @@
     <!--newsleft-->
     <!--news_center-->
     <div class="news_center ml30 fl">
-    	<dl class="dl1">
-            <dt class="first"><a href="javascript:;">各品种钢材价格上涨 多部委遏制钢材泡沫</a></dt>
-            <dd><a href="javascript:;">铁矿螺纹钢厂再掀涨价潮涨价潮 </a><span>|</span><a href="javascript:;">盼盼等多品牌防盗门质量真堪忧堪</a></dd>
-            <dd><a href="javascript:;">快过年了 你家的锁具安全吗你家的锁具</a><span>|</span><a href="javascript:;">五金建材行业再次全国涨价</a></dd>
-            <dd class="last_dd"><a href="javascript:;">快过年了 你家的锁具安全吗你家的锁具</a><span>|</span><a href="javascript:;">五金建材行业再次全国涨价</a></dd>
-        </dl>
-       <dl class="dl2 mt10">
-            <dt><a href="javascript:;">2017年国内锂电行业出现大规模倒闭潮</a></dt>
-            <dd><a href="javascript:;">铁矿螺纹钢厂再掀涨价潮涨价潮 </a><span>|</span><a href="javascript:;">盼盼等多品牌防盗门质量真堪忧堪</a></dd>
-            <dd><a href="javascript:;">快过年了 你家的锁具安全吗你家的锁具</a><span>|</span><a href="javascript:;">五金建材行业再次全国涨价</a></dd>
-             <dd><a href="javascript:;">铁矿螺纹钢厂再掀涨价潮涨价潮 </a><span>|</span><a href="javascript:;">盼盼等多品牌防盗门质量真堪忧堪</a></dd>
-            <dd><a href="javascript:;">快过年了 你家的锁具安全吗你家的锁具</a><span>|</span><a href="javascript:;">五金建材行业再次全国涨价</a></dd>
-             <dd class="last_dd"><a href="javascript:;">铁矿螺纹钢厂再掀涨价潮涨价潮 </a><span>|</span><a href="javascript:;">盼盼等多品牌防盗门质量真堪忧堪</a></dd>
-        </dl>
+    	
+       <dl class="dl2 mt10" id="d12 mt10"></dl>
 
     </div>
     <!--/news_center-->
-    <div class="news_right fr">
-    	<div class="kuaibao">
-        	<div class="title clearfix">
-                <a href="javascript:;" class="fl a1">时事新闻</a>
-                <a href="#" class="reflesh fr"><i><img src="images/reflesh.png"></i>刷新</a>
-            </div>
-            <ul class="mt20">
-            	<li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-                <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-                <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-                <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-                <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>
-                
-                <li><a href="javascript:;">小米晋升印度主管为全球总裁 接替人雨果</a><i></i></li>    
-            </ul>
-        </div>
-        
-    </div>
 </div>
 <!--/news-->
+<script>
+    $(function () {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var responseText = xmlhttp.responseText;
+                var jsonArray = JSON.parse(responseText);
+                var resultHTML = "<dt><a href=\"javascript:;\">热点要闻</a></dt>";
+                var count = 0;
+
+                $(jsonArray).each(function(){
+                    var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                    var title = this.newsTitle;
+                    if(count<10) {
+                        resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
+                        count++;
+                    }
+                });
+
+                document.getElementById("d12 mt10").innerHTML=resultHTML;
+            }
+        }
+        xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=国", true);
+        xmlhttp.send();
+    })
+</script>
 
 <!--home-->
 <div class="w1200 classify mt20">
@@ -157,7 +158,7 @@
         	<div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" target="_blank">国内</a></li>
+                      <li class="on"><a href="javascript:;" >国内</a></li>
                       
                     </ul>
                 </div>
@@ -165,49 +166,52 @@
             </div>
 			<div class="tab-bd">
                 <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img3.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                       <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
+                	
+                   <dl class="bottom mt10" id = "national"></dl>
                 </div>
-                <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img4.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                        <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
-                </div>
+
 			</div>
         </div>
+        <script>
+            $(function () {
+                var xmlhttp;
+                if (window.XMLHttpRequest) {
+                    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // IE6, IE5 浏览器执行代码
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        var responseText = xmlhttp.responseText;
+                        var jsonArray = JSON.parse(responseText);
+                        var resultHTML = "";
+                        var count = 0;
+
+                        $(jsonArray).each(function(){
+                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                            var title = this.newsTitle;
+                            if(count<8) {
+                                resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
+                                count++;
+                            }
+                        });
+
+                        document.getElementById("national").innerHTML=resultHTML;
+                    }
+                }
+                xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:国内", true);
+                xmlhttp.send();
+            })
+        </script>
         <!--国际-->
         <div class="home fl ml20">
         	<div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" target="_blank">国际</a></li>
+                      <li class="on"><a href="javascript:;" >国际</a></li>
                       
                     </ul>
                 </div>
@@ -215,49 +219,52 @@
             </div>
 			<div class="tab-bd">
                 <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img4.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                       <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
+    
+                   <dl class="bottom mt10" id="international"></dl>
                 </div>
-                <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img4.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                        <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
-                </div>
+            
 			</div>
         </div>
+        <script>
+            $(function () {
+                var xmlhttp;
+                if (window.XMLHttpRequest) {
+                    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // IE6, IE5 浏览器执行代码
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        var responseText = xmlhttp.responseText;
+                        var jsonArray = JSON.parse(responseText);
+                        var resultHTML = "";
+                        var count = 0;
+
+                        $(jsonArray).each(function(){
+                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                            var title = this.newsTitle;
+                            if(count<8) {
+                                resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
+                                count++;
+                            }
+                        });
+
+                        document.getElementById("international").innerHTML=resultHTML;
+                    }
+                }
+                xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:国外", true);
+                xmlhttp.send();
+            })
+        </script>
         <!--军事-->
         <div class="home fl">
         	<div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" target="_blank">军事</a></li>
+                      <li class="on"><a href="javascript:;" >政治</a></li>
                       
                     </ul>
                 </div>
@@ -265,49 +272,52 @@
             </div>
 			<div class="tab-bd">
                 <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img5.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                       <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
+                	
+                   <dl class="bottom mt10" id="political"></dl>
                 </div>
-                <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img5.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                        <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
-                </div>
+                
 			</div>
         </div>
+        <script>
+            $(function () {
+                var xmlhttp;
+                if (window.XMLHttpRequest) {
+                    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // IE6, IE5 浏览器执行代码
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        var responseText = xmlhttp.responseText;
+                        var jsonArray = JSON.parse(responseText);
+                        var resultHTML = "";
+                        var count = 0;
+
+                        $(jsonArray).each(function(){
+                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                            var title = this.newsTitle;
+                            if(count<8) {
+                                resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
+                                count++;
+                            }
+                        });
+
+                        document.getElementById("political").innerHTML=resultHTML;
+                    }
+                }
+                xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:政治", true);
+                xmlhttp.send();
+            })
+        </script>
         <!--财经-->
         <div class="home fl ml20">
         	<div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" target="_blank">财经</a></li>
+                      <li class="on"><a href="javascript:;" >经济</a></li>
                       
                     </ul>
                 </div>
@@ -315,49 +325,51 @@
             </div>
 			<div class="tab-bd">
                 <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img6.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                       <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
-                </div>
-                <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img6.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                        <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
+    
+                   <dl class="bottom mt10" id = "economy"></dl>
                 </div>
 			</div>
         </div>
+        <script>
+            $(function () {
+                var xmlhttp;
+                if (window.XMLHttpRequest) {
+                    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // IE6, IE5 浏览器执行代码
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        var responseText = xmlhttp.responseText;
+                        var jsonArray = JSON.parse(responseText);
+                        var resultHTML = "";
+                        var count = 0;
+
+                        $(jsonArray).each(function(){
+                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                            var title = this.newsTitle;
+                            if(count<8) {
+                                resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
+                                count++;
+                            }
+                        });
+
+                        document.getElementById("economy").innerHTML=resultHTML;
+                    }
+                }
+                xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:经济", true);
+                xmlhttp.send();
+            })
+        </script>
         <!--娱乐-->
         <div class="home fl">
         	<div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" target="_blank">娱乐</a></li>
+                      <li class="on"><a href="javascript:;" >科技</a></li>
                       
                     </ul>
                 </div>
@@ -365,236 +377,96 @@
             </div>
 			<div class="tab-bd">
                 <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img5.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                       <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
-                </div>
-                <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img5.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                        <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
+                    <dl class="bottom mt10" id="science"></dl>
                 </div>
 			</div>
         </div>
+        <script>
+            $(function () {
+                var xmlhttp;
+                if (window.XMLHttpRequest) {
+                    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // IE6, IE5 浏览器执行代码
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        var responseText = xmlhttp.responseText;
+                        var jsonArray = JSON.parse(responseText);
+                        var resultHTML = "";
+                        var count = 0;
+
+                        $(jsonArray).each(function(){
+                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                            var title = this.newsTitle;
+                            if(count<4) {
+                                resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
+                                count++;
+                            }
+                        });
+
+                        document.getElementById("science").innerHTML=resultHTML;
+                    }
+                }
+                xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:科技", true);
+                xmlhttp.send();
+            })
+        </script>
         <!--体育-->
         <div class="home fl ml20">
         	<div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" target="_blank">体育</a></li>
+                      <li class="on"><a href="javascript:;" >疫情</a></li>
                       
                     </ul>
                 </div>
                 <ul class="tab-bd1 fr"><li><a href="javascript:;">更多></a></li><li><a href="javascript:;">更多></a></li></ul>
             </div>
 			<div class="tab-bd">
+                
                 <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img6.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                       <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
-                </div>
-                <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img6.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                        <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
+                    <dl class="bottom mt10" id="epidemic"></dl>
                 </div>
 			</div>
         </div>
-        <!--科技-->
-        <div class="home fl">
-        	<div class="clearfix title">
-                <div class="tab-hd clearfix fl">
-                    <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" target="_blank">科技</a></li>
-                      
-                    </ul>
-                </div>
-                <ul class="tab-bd1 fr"><li><a href="javascript:;">更多></a></li><li><a href="javascript:;">更多></a></li></ul>
-            </div>
-			<div class="tab-bd">
-                <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img5.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                       <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
-                </div>
-                <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img5.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                        <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
-                </div>
-			</div>
-        </div>
-        <!--游戏-->
-        <div class="home fl ml20">
-        	<div class="clearfix title">
-                <div class="tab-hd clearfix fl">
-                    <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" target="_blank">游戏</a></li>
-                      
-                    </ul>
-                </div>
-                <ul class="tab-bd1 fr"><li><a href="javascript:;">更多></a></li><li><a href="javascript:;">更多></a></li></ul>
-            </div>
-			<div class="tab-bd">
-                <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img6.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                       <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
-                </div>
-                <div class="tab-pal">
-                	<div class="clearfix top">
-                       <div class="fl"><img src="img/index-img6.png"><p><a href="javascript:;">卫浴建材新春天在哪里</a></p></div>
-                        <ul class="fr">
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li><a href="javascript:;"><span>•</span>快过年了 你家的锁具安全吗你家价潮快过年了 你家的锁具安全吗你家价潮</a></li>
-                            <li class="last_li"><a href="javascript:;"><span>•</span>铁矿螺纹钢厂再掀涨价潮涨价潮价潮</a></li>
-                       </ul>
-                   </div>
-                   <dl class="bottom mt10">
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                        <dd class="clearfix"><a href="javascript:;" class="fl"><span>•</span>2017家装建材市场迎来新变革电商或成为行业主角</a><span class="fr">[02-22]</span></dd>
-                   </dl>     
-                </div>
-			</div>
-        </div>
-    </div>
-    <div class="right fr">
-        <div class="hot">
-        	<div class="title">热点新闻</div>
-            <div class="tab-hd mb20">
-                <ul class="tab-nav clearfix">
-                  <li class="on"><a href="javascript:;
-">日排行</a></li>
-                  <li><a href="javascript:;
-">周排行</a></li>
-                </ul>
-            </div>
-            <div class="tab-bd2">
-                <div class="tab-pal">
-                    <ul>
-                        <li><span class="on">1</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                        <li><span class="on">2</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                        <li><span class="on">3</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                        <li><span class="on">4</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                        <li><span>5</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                        <li><span>6</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                        <li><span>7</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                        <li><span>8</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                        <li><span>9</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                        <li><span>10</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                    </ul>
-                </div>
-                <div class="tab-pal">
-                    <ul>
-                        <li><span class="on">1</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                        <li><span class="on">2</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商</a></li>
-                        <li><span class="on">3</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                        <li><span class="on">4</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                        <li><span>5</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                        <li><span>6</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                        <li><span>7</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                        <li><span>8</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                        <li><span>9</span><a href="javascript:;" class="h">家装建材市场迎来新变革电商或成</a></li>
-                        <li><span>10</span><a href="javascript:;" class="h">2017家装建材市场迎来新变革电商</a></li>
-                  </ul>
-            </div>
-		</div>
-       </div>
+        <script>
+            $(function () {
+                var xmlhttp;
+                if (window.XMLHttpRequest) {
+                    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // IE6, IE5 浏览器执行代码
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        var responseText = xmlhttp.responseText;
+                        var jsonArray = JSON.parse(responseText);
+                        var resultHTML = "";
+                        var count = 0;
+
+                        $(jsonArray).each(function(){
+                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                            var title = this.newsTitle;
+                            if(count<8) {
+                                resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
+                                count++;
+                            }
+                        });
+
+                        document.getElementById("epidemic").innerHTML=resultHTML;
+                    }
+                }
+                xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:疫情", true);
+                xmlhttp.send();
+            })
+        </script>
     </div>
 </div>
 <!--/home-->
