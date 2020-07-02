@@ -20,8 +20,9 @@ public class NewsDetailServlet extends HttpServlet {
         JSONObject newsDetail = new JSONObject();
         newsDetail.put("newsTitle", targetNews.getNewsTitle());
         newsDetail.put("newsText", targetNews.getNewsText());
-        String titleHTML = "<h1><a href=\"javascript:;\">" + targetNews.getNewsTitle() + "</a></h1>";
-        ResponseForAjax.sendAsJson(resp, titleHTML + targetNews.getNewsText());
+//        String titleHTML = "<h1><a href=\"javascript:;\">" + targetNews.getNewsTitle() + "</a></h1>";
+//        ResponseForAjax.sendAsJson(resp, titleHTML + targetNews.getNewsText());
+        ResponseForAjax.sendAsJson(resp, newsDetail.toString());
     }
 
     @Override
