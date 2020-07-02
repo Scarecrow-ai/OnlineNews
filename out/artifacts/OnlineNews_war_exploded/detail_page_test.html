@@ -61,24 +61,7 @@
 <!--left-->
 	<div class="detail_left fl">
     	<ul class="clearfix title"><li><a href="javascript:;">资讯首页 > </a></li><li><a href="javascript:;">市场 ></a></li> <li><a href="javascript:;">动态 ></a></li> <li><a href="javascript:;">正文</a></li></ul>
-        <div class="artical">
-        	<h1><a href="javascript:;">家具用牛皮出台新标准 首提“使用率”指标</a></h1>
-            <div class="clearfix">
-            	<ul class="fl origin"><li><a href="javascript:;">来源：网页模板网</a></li>　<li><a href="javascript:;">编辑：西门吹雪</a></li>　<li><a href="javascript:;">2017-02-25 15:56</a></li></ul>
-            	<div class="fr view"><img src="images/detail_ico2.png">1582</div>
-            </div>
-            <div class="abstract">
-            	摘要：标准化战略在顺德再有新突破。20日，记者从顺德区市监局获洗，由顺德区质量技术监督标准与编码所和佛山市，术监督标准与家居材料商会负责起草的《家具用牛皮》联盟标准，被相关机构审定通过的相关。
-            </div>
-            <p>在OEM市场中，由于4S店和整车厂认证维修店直接获得上游整车厂的维修授权，所以在汽车维修件的终端用户能享受到正品保障的优势，但整车厂到4S店维修件直供的模式是建立在垄断基础上，整车厂不提供其它未授权的服务商进行汽配件的流通服务，所以垄断性质不利于整个汽配市场的发展，更不利于终端汽车用户的维修权益的全面保障。</p>
-            <p>近几年随着我国汽车后市场的政策不断出台逐渐打破了汽车后市场汽配维修件垄断格局，比如2014年9月出台的《关于促进汽车维修业转型升级服务质量的指导意见》中指出“破除配件渠道垄断”，2015年8月《交通运输部关于修改<就动车维修管理>的决定》“明确车主消费者可以自主选择车辆维修地点”，2015年9月《汽车维修技术信息公开实施管理办法》。
-</p>
-			<p style="text-align:center;"><img src="img/detail_img5.png"></p>
-			<p>过设置技术壁垒排除、限制竞争，封锁或者垄断汽车维修市场”，随着这一格局的打破，由独立的国内外汽车零部件生产商、汽配的流通商、终端个人维修店填补了符合市场竞争的AM市场。</p>
- 
-      		<p>AM市场较于OEM市场更适合现代社会市场的生存法则，市场的竞争机制带来了更多的参与者。但是产业链下游比如终端维修店，在享受选择产品多渠道化等便利的同时，整个汽配流通环节也出现了新的麻烦点。比如，中游分销端众多经销商的进入增多了整个汽配行业的分销环节，冗长的供应链滋生了系列问题等多骨诺米牌效应，当然，此时的自由市场竞争机制也加速融合了AM市场与OEM市场。</p>
-
-        </div>
+        <div class="artical" id = "artical"></div>
         <div class="clearfix information">
             <dl class="fl left">
                 <dt class="clearfix"><a href="javascript:;" class="fl">相关资讯</a><a href="javascript:;" class="fr">更多></a>
@@ -251,7 +234,6 @@ $(".thisimg3").mouseout(function(){
 <script src="js/js.js"></script>
 <script>
 $(function(){
-	
 	//专题切换
 	jQuery(".focus").slide({ titCell:".tip li", mainCell:".news_pic ul",effect:"left",autoPlay:true,delayTime:200 });
 	//专题文字切换
@@ -261,9 +243,40 @@ $(function(){
 	jQuery(".shopping").slide({ titCell:".tab-hd li", mainCell:".tab-bd1",delayTime:0 });
 	//热文榜
     jQuery(".hot").slide({ titCell:".tab-hd li", mainCell:".tab-bd2",delayTime:0 });
-	})
+
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {
+        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("artical").innerHTML=xmlhttp.responseText;
+        }
+    }
+    // alert("/newsDetail?newsId=" + getParams("newsId"));
+    xmlhttp.open("GET","/OnlineNews_war_exploded/newsDetail?newsId=" + getParams("newsId"),true);
+    xmlhttp.send();
+	});
 	/*热门*/
 	jQuery(".hot_topics").slide({ titCell:".tab-hd li", mainCell:".tab-bd",delayTime:0 });
+function getParams(key) {
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return null;
+};
 </script>
 </body>
 </html>

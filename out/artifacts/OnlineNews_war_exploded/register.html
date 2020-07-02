@@ -18,40 +18,38 @@
 <h1>在 线 新 闻 平 台</h1>
 	<div class="content2">
 		<h2>注&nbsp&nbsp&nbsp&nbsp册</h2>
-		<form action="register" method="POST" enctype ="multipart/form-data">
+		<form action="register" method="POST" enctype="multipart/form-data">
 
-            
-            
+
 			<input type="text" id="userid" name="userid" placeholder="用户名（可包含字母或数字）">
 			<input type="tel" id="usrtel" name="usrtel" placeholder="手机号">
 			<input type="email" id="email" name="email" placeholder="邮箱">
-            <input type="password" id="psw" name="psw" placeholder="密码">  
-            
-            <input type="file" name="headPortrait" id="headPortrait">
-            <img id="tou_xiang" height="38" width="38">
-            
-            
-           
-            <script>
-                var fileInput = document.querySelector('input[type=file]'),
-                previewImg = document.querySelector('img');
-                fileInput.addEventListener('change', function () {
-                var file = this.files[0];
-                var reader = new FileReader();
-                // 监听reader对象的的onload事件，当图片加载完成时，把base64编码賦值给预览图片
-                reader.addEventListener("load", function () {
-                previewImg.src = reader.result;
-            }, false);
-            // 调用reader.readAsDataURL()方法，把图片转成base64
-            reader.readAsDataURL(file);
-            }, false);
-            </script>
-           
-			
-            <div class="button-row">
-                <input type="button" class="back" value="返回" onclick="window.location.href='index.html'">
-                <input type="submit" class="register" value="确定">
-            </div>
+			<input type="password" id="psw" name="psw" placeholder="密码">
+
+			<input type="file" name="headPortrait" id="headPortrait">
+			<img id="tou_xiang" height="38" width="38">
+
+
+			<script>
+				var fileInput = document.querySelector('input[type=file]'),
+						previewImg = document.querySelector('img');
+				fileInput.addEventListener('change', function () {
+					var file = this.files[0];
+					var reader = new FileReader();
+					// 监听reader对象的的onload事件，当图片加载完成时，把base64编码賦值给预览图片
+					reader.addEventListener("load", function () {
+						previewImg.src = reader.result;
+					}, false);
+					// 调用reader.readAsDataURL()方法，把图片转成base64
+					reader.readAsDataURL(file);
+				}, false);
+			</script>
+
+
+			<div class="button-row">
+				<input type="button" class="back" value="返回" onclick="window.location.href='index.html'">
+				<input type="submit" class="register" value="确定">
+			</div>
             
 		</form>
 	</div>

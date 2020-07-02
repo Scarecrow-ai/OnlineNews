@@ -185,16 +185,16 @@ h3{
 	border-radius: 4px;
 }
 .content2 input[type="file"] {
-	
-	padding:20px 40px 10px 10px;
-	width:62%;
-	border:1px solid white;
-	color:#fff;
-	text-align:left;
-	outline:none;
-	font-size:15px;
-	
-	margin-top:4%;
+
+	padding: 20px 40px 10px 10px;
+	width: 62%;
+	border: 1px solid white;
+	color: #fff;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+
+	margin-top: 4%;
 	font-weight: 300;
 	font-family: 'Muli', sans-serif;
 	border-radius: 4px;
@@ -302,10 +302,10 @@ h3{
 	transition: all 0.5s ease-in-out;
 }
 
-#tou_xiang{
-	border:1px solid white;
+#tou_xiang {
+	border: 1px solid white;
 	margin-top: 2%;
-	
+
 }
 
 
