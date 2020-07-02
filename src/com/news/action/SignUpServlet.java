@@ -3,6 +3,7 @@ package com.news.action;
 import com.news.dao.UserDao;
 import com.news.dao.impl.UserDaoImpl;
 import com.news.entity.User;
+import net.sf.json.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,9 +43,12 @@ public class SignUpServlet extends HttpServlet {
         }
         //判断存在该用户的情况下密码是否正确
         else if (user2.getUserPwd().equals("pwd1")) {
-            req.getSession().setAttribute("userName", name1);
 
-            resp.sendRedirect("main.html");
+            req.getSession().setAttribute("user", user2);
+            req.setCharacterEncoding("UTF-8");
+
+            JSONObject jsonObject = JSONObject.fromObject(user2);
+            resp.getWriter().write(jsonObject.toString());
         } else {
             resp.sendRedirect("SignError.jsp");
         }

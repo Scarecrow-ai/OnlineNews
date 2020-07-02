@@ -3,7 +3,7 @@ package com.news.utils;
 import java.sql.*;
 
 /**
- * 操作数据库的工具类
+ * 操作用户数据库的工具类
  */
 public class DButils {
     //连接地址
@@ -11,7 +11,7 @@ public class DButils {
     //用户名
     private String user = "root";
     //用户密码
-    private String password = "abc123";
+    private String password = "admin";
 
     private Connection conn = null;
     private PreparedStatement stmt = null;

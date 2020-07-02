@@ -7,8 +7,11 @@
           <element id="module-output" name="OnlineNews" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="lib" />
-          <element id="file-copy" path="$PROJECT_DIR$/src/lib/mysql-connector-java-8.0.20.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jstl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/standard.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/commons-io-2.7.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/commons-fileupload-1.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-8.0.20.jar" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="OnlineNews/web/Web" />

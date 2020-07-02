@@ -29,7 +29,6 @@ public interface UserDao {
      * 以id作为条件进行查询
      */
     public User selectID(User user);
-
     /**
      * 以用户名作为条件进行查询
      */

@@ -54,7 +54,7 @@
 .news_center dl dt.first a{ color:#ff0000; }
 .news_center dl dd{ line-height:30px; height:30px; overflow:hidden; width:435px;}
 .news_center dl dd.last_dd{ padding-bottom:12px;}
-.news_center dl dd span{font-family:"宋体"; margin:0 5px; color:#999;}
+.news_center dl dd span{font-family:"宋体"; margin:0 5px; color:#333;}
 .news_center dl.dl1{ border-bottom:1px solid #e0e0e0;}
 .news_center dl.dl2{ border-bottom:1px solid #e0e0e0;}
 .news_right .kuaibao{padding:15px 20px; width:240px; border:1px solid #e0e0e0; height:335px;}
@@ -269,6 +269,9 @@
 .label li{ float:left; margin-bottom:13px;}
 .label li a{ display:block; padding:4px 12px;  background:#F8F8F8;}
 .label li a:hover{text-decoration:underline; color:#555;}
+#comments{
+    color: #333;
+}
 
 /*********频道页*************/
 /*banner滚动*/
@@ -370,7 +373,12 @@
 .special_list .right p{ width:280px;}
 .special_list .right .p .p2 a{ display:block;color:#999; line-height:32px; height:32px;}
 
-
+span#userid{
+    color: #333;
+}
+span#comments{
+    color: #333;
+}
 
 
 
