@@ -25,7 +25,7 @@ public class getReviewServlet extends HttpServlet {
         List<Review> list = dao.selectnewsId(newsId);
         JSONArray jsonArray = new JSONArray();
         jsonArray.addAll(list);
-        System.out.println(jsonArray.toString());
+        
         resp.getWriter().write(jsonArray.toString());
     }
 

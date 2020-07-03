@@ -43,5 +43,6 @@ public class ReviewServlet extends HttpServlet {
 
         dao.insert(review);
 
+        resp.sendRedirect("detail_page_test.html?newsId=" + newsid);
     }
 }
