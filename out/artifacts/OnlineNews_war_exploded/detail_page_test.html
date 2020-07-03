@@ -30,8 +30,8 @@
     <div class="search fr mt33">
         <form action="channel_page_test.html" method="get">
             <div class="searchBox clearfix">
-                <input class="fl" name="keyword" type="text" placeholder="请输入所搜新闻关键字" />
-                <input class="fl zoom" value="" type="submit" />
+                <input class="fl" name="keyword" type="text" placeholder="请输入所搜新闻关键字"/>
+                <input class="fl zoom" value="" type="submit"/>
             </div>
         </form>
     </div>
@@ -59,42 +59,43 @@
                 </form>
             </dl>
         </div>
-<script>
-    $(function () {
-        var xmlhttp;
-        if (window.XMLHttpRequest) {
-            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // IE6, IE5 浏览器执行代码
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function () {
-            // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                var responseText = xmlhttp.responseText;
-                var jsonArray = JSON.parse(responseText);
-                var resultHTML = "";
+        <script>
+            $(function () {
+                var xmlhttp;
+                if (window.XMLHttpRequest) {
+                    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // IE6, IE5 浏览器执行代码
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    // alert(xmlhttp.readyState.toString()+" "+xmlhttp.status.toString());
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        var responseText = xmlhttp.responseText;
+                        var jsonArray = JSON.parse(responseText);
+                        var resultHTML = "";
 
-                $(jsonArray).each(function(){
-                    var userName =this.userName;
-                    var text = this.text;
-                    resultHTML = resultHTML + "<li class=\"register\"><span id=\"userName\">"+userName+"</span>\n" +
-                        "：<span id=\"comments\">"+text+"</span>\n" +
-                        "</li>";
-                });
-                document.getElementById("review_area").innerHTML = resultHTML;
+                        $(jsonArray).each(function () {
+                            var userName = this.userName;
+                            var text = this.text;
+                            resultHTML = resultHTML + "<li class=\"register\"><span id=\"userName\">" + userName + "</span>\n" +
+                                "：<span id=\"comments\">" + text + "</span>\n" +
+                                "</li>";
+                        });
+                        document.getElementById("review_area").innerHTML = resultHTML;
+                    }
+                }
+
+                xmlhttp.open("POST", "/OnlineNews_war_exploded/getReview?newsId=" + getParams("newsId"), true);
+                xmlhttp.send();
+            });
+
+            function postReview() {
+                document.comments_form.action = "review?newsId=" + getParams("newsId");
+                document.comments_form.submit();
             }
-        }
-
-        xmlhttp.open("POST", "/OnlineNews_war_exploded/getReview?newsId=" + getParams("newsId"), true);
-        xmlhttp.send();
-    });
-    function postReview() {
-        document.comments_form.action = "review?newsId=" + getParams("newsId");
-        document.comments_form.submit();
-    }
-</script>
+        </script>
 
         <!--热门-->
     </div>

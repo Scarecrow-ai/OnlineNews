@@ -33,13 +33,37 @@
         }
         return null;
     }
+
     $(function () {
-        var imagePath = getParams("imgPath");
-        var userName = getParams("userName");
-        var resultHTML="<li class=\"register\"><img id=\"headPortrait\" name=\"headPortrait\" height=\"40px\" width=\"40px\" " +
-            "src=\""+imagePath +"\" alt=\"头像\"></li> \n" +
-            " <li class=\"login\" name=\"uesrid\"> <span id=\"userid\">"+userName+"</span> </li>  ";
-        document.getElementById("user").innerHTML = resultHTML;
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // IE6, IE5 浏览器执行代码
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                alert(xmlhttp.readyState.toString() + " " + xmlhttp.status.toString());
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var responseText = xmlhttp.responseText;
+                    var jsonObject = JSON.parse(responseText);
+                    var resultHTML = "";
+                    var imagePath = jsonObject.imgPath;
+                    var userName = jsonObject.userName;
+                    var resultHTML = "<li class=\"register\"><img id=\"headPortrait\" name=\"headPortrait\" height=\"40px\" width=\"40px\" " +
+                    "alt=\"头像\"></li> \n" +
+                        " <li class=\"login\" name=\"uesrid\"> <span id=\"userid\">" + userName + "</span> </li>  ";
+                    document.getElementById("user").innerHTML = resultHTML;
+                    var image = document.getElementById("headPortrait");
+                    alert("here");
+                    var reader = new FileReader();
+                    image.src = reader.readAsDataURL(imagePath);
+
+                }
+            }
+                xmlhttp.open("POST", "/OnlineNews_war_exploded/signup", true);
+                xmlhttp.send();
     })
 </script>
 <!--/top-->
@@ -49,9 +73,9 @@
     <div class="search fr mt33">
         <form action="channel_page_test.html" method="get">
             <div class="searchBox clearfix">
-                <input class="fl" name="keyword" type="text" placeholder="请输入所搜新闻关键字" />
-                <input class="fl zoom" value="" type="submit" />
-            </div>          
+                <input class="fl" name="keyword" type="text" placeholder="请输入所搜新闻关键字"/>
+                <input class="fl zoom" value="" type="submit"/>
+            </div>
         </form>
         
     </div>
@@ -69,23 +93,27 @@
             <div class="news_pic">
                 <ul>
                     <!--a为单击图片后进入的页面-->
-                    <li><a href="detail_page_test.html?newsId=50"><img src="https://b.bdstatic.com/boxlib/20200703/2020070300004567993590934.jpg"></a>
+                    <li><a href="detail_page_test.html?newsId=50"><img
+                            src="https://b.bdstatic.com/boxlib/20200703/2020070300004567993590934.jpg"></a>
                     </li>
-                    <li><a href="detail_page_test.html?newsId=51"><img src="https://b.bdstatic.com/boxlib/20200703/2020070300103966653246944.jpg"></a>
+                    <li><a href="detail_page_test.html?newsId=51"><img
+                            src="https://b.bdstatic.com/boxlib/20200703/2020070300103966653246944.jpg"></a>
                     </li>
-                    <li><a href="detail_page_test.html?newsId=52"><img src="http://sports.xinhuanet.com/c/2020-07/01/1126184390_15936071413191n.jpg"></a>
+                    <li><a href="detail_page_test.html?newsId=52"><img
+                            src="http://sports.xinhuanet.com/c/2020-07/01/1126184390_15936071413191n.jpg"></a>
                     </li>
-                    <li><a href="detail_page_test.html?newsId=53"><img src="https://b.bdstatic.com/boxlib/20200703/2020070300103752426557429.jpg"></a>
+                    <li><a href="detail_page_test.html?newsId=53"><img
+                            src="https://b.bdstatic.com/boxlib/20200703/2020070300103752426557429.jpg"></a>
                     </li>
                 </ul>
             </div>
 			<div class="ifocus_tx">
-				<ul>
-                    <li><a href="detail_page_test.html?newsId=50" >科威特进入复工复产第二阶段</a></li>
-                    <li><a href="detail_page_test.html?newsId=51" >日本“出云”号改装成真航母现场曝光</a></li>
-                    <li><a href="detail_page_test.html?newsId=52" >CBA复赛第一阶段：新疆伊力特胜青岛国信双星</a></li>
-                    <li><a href="detail_page_test.html?newsId=53" >湖南凤凰中华大熊猫苑开园</a></li>
-            	</ul>
+                <ul>
+                    <li><a href="detail_page_test.html?newsId=50">科威特进入复工复产第二阶段</a></li>
+                    <li><a href="detail_page_test.html?newsId=51">日本“出云”号改装成真航母现场曝光</a></li>
+                    <li><a href="detail_page_test.html?newsId=52">CBA复赛第一阶段：新疆伊力特胜青岛国信双星</a></li>
+                    <li><a href="detail_page_test.html?newsId=53">湖南凤凰中华大熊猫苑开园</a></li>
+                </ul>
 			</div>
             <div class="tip">
                 <ul>
@@ -107,8 +135,8 @@
     <!--newsleft-->
     <!--news_center-->
     <div class="news_center ml30 fl">
-    	
-       <dl class="dl2 mt10" id="d12 mt10"></dl>
+
+        <dl class="dl2 mt10" id="d12 mt10"></dl>
 
     </div>
     <!--/news_center-->
@@ -132,16 +160,16 @@
                 var resultHTML = "<dt><a href=\"javascript:;\">热点要闻</a></dt>";
                 var count = 0;
 
-                $(jsonArray).each(function(){
-                    var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                $(jsonArray).each(function () {
+                    var url = "/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
                     var title = this.newsTitle;
-                    if(count<10) {
+                    if (count < 10) {
                         resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
                         count++;
                     }
                 });
 
-                document.getElementById("d12 mt10").innerHTML=resultHTML;
+                document.getElementById("d12 mt10").innerHTML = resultHTML;
             }
         }
         xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=国", true);
@@ -158,19 +186,22 @@
         	<div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" >国内</a></li>
-                      
+                        <li class="on"><a href="javascript:;">国内</a></li>
+
                     </ul>
                 </div>
-                <ul class="tab-bd1 fr"><li><a href="javascript:;">更多></a></li><li><a href="javascript:;">更多></a></li></ul>
+                <ul class="tab-bd1 fr">
+                    <li><a href="javascript:;">更多></a></li>
+                    <li><a href="javascript:;">更多></a></li>
+                </ul>
             </div>
-			<div class="tab-bd">
+            <div class="tab-bd">
                 <div class="tab-pal">
-                	
-                   <dl class="bottom mt10" id = "national"></dl>
+
+                    <dl class="bottom mt10" id="national"></dl>
                 </div>
 
-			</div>
+            </div>
         </div>
         <script>
             $(function () {
@@ -190,16 +221,16 @@
                         var resultHTML = "";
                         var count = 0;
 
-                        $(jsonArray).each(function(){
-                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                        $(jsonArray).each(function () {
+                            var url = "/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
                             var title = this.newsTitle;
-                            if(count<8) {
+                            if (count < 8) {
                                 resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
                                 count++;
                             }
                         });
 
-                        document.getElementById("national").innerHTML=resultHTML;
+                        document.getElementById("national").innerHTML = resultHTML;
                     }
                 }
                 xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:国内", true);
@@ -208,22 +239,25 @@
         </script>
         <!--国际-->
         <div class="home fl ml20">
-        	<div class="clearfix title">
+            <div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" >国际</a></li>
-                      
+                        <li class="on"><a href="javascript:;">国际</a></li>
+
                     </ul>
                 </div>
-                <ul class="tab-bd1 fr"><li><a href="javascript:;">更多></a></li><li><a href="javascript:;">更多></a></li></ul>
+                <ul class="tab-bd1 fr">
+                    <li><a href="javascript:;">更多></a></li>
+                    <li><a href="javascript:;">更多></a></li>
+                </ul>
             </div>
-			<div class="tab-bd">
+            <div class="tab-bd">
                 <div class="tab-pal">
-    
-                   <dl class="bottom mt10" id="international"></dl>
+
+                    <dl class="bottom mt10" id="international"></dl>
                 </div>
-            
-			</div>
+
+            </div>
         </div>
         <script>
             $(function () {
@@ -243,16 +277,16 @@
                         var resultHTML = "";
                         var count = 0;
 
-                        $(jsonArray).each(function(){
-                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                        $(jsonArray).each(function () {
+                            var url = "/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
                             var title = this.newsTitle;
-                            if(count<8) {
+                            if (count < 8) {
                                 resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
                                 count++;
                             }
                         });
 
-                        document.getElementById("international").innerHTML=resultHTML;
+                        document.getElementById("international").innerHTML = resultHTML;
                     }
                 }
                 xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:国外", true);
@@ -261,22 +295,25 @@
         </script>
         <!--军事-->
         <div class="home fl">
-        	<div class="clearfix title">
+            <div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" >政治</a></li>
-                      
+                        <li class="on"><a href="javascript:;">政治</a></li>
+
                     </ul>
                 </div>
-                <ul class="tab-bd1 fr"><li><a href="javascript:;">更多></a></li><li><a href="javascript:;">更多></a></li></ul>
+                <ul class="tab-bd1 fr">
+                    <li><a href="javascript:;">更多></a></li>
+                    <li><a href="javascript:;">更多></a></li>
+                </ul>
             </div>
-			<div class="tab-bd">
+            <div class="tab-bd">
                 <div class="tab-pal">
-                	
-                   <dl class="bottom mt10" id="political"></dl>
+
+                    <dl class="bottom mt10" id="political"></dl>
                 </div>
-                
-			</div>
+
+            </div>
         </div>
         <script>
             $(function () {
@@ -296,16 +333,16 @@
                         var resultHTML = "";
                         var count = 0;
 
-                        $(jsonArray).each(function(){
-                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                        $(jsonArray).each(function () {
+                            var url = "/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
                             var title = this.newsTitle;
-                            if(count<8) {
+                            if (count < 8) {
                                 resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
                                 count++;
                             }
                         });
 
-                        document.getElementById("political").innerHTML=resultHTML;
+                        document.getElementById("political").innerHTML = resultHTML;
                     }
                 }
                 xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:政治", true);
@@ -314,21 +351,24 @@
         </script>
         <!--财经-->
         <div class="home fl ml20">
-        	<div class="clearfix title">
+            <div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" >经济</a></li>
-                      
+                        <li class="on"><a href="javascript:;">经济</a></li>
+
                     </ul>
                 </div>
-                <ul class="tab-bd1 fr"><li><a href="javascript:;">更多></a></li><li><a href="javascript:;">更多></a></li></ul>
+                <ul class="tab-bd1 fr">
+                    <li><a href="javascript:;">更多></a></li>
+                    <li><a href="javascript:;">更多></a></li>
+                </ul>
             </div>
-			<div class="tab-bd">
+            <div class="tab-bd">
                 <div class="tab-pal">
-    
-                   <dl class="bottom mt10" id = "economy"></dl>
+
+                    <dl class="bottom mt10" id="economy"></dl>
                 </div>
-			</div>
+            </div>
         </div>
         <script>
             $(function () {
@@ -348,16 +388,16 @@
                         var resultHTML = "";
                         var count = 0;
 
-                        $(jsonArray).each(function(){
-                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                        $(jsonArray).each(function () {
+                            var url = "/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
                             var title = this.newsTitle;
-                            if(count<8) {
+                            if (count < 8) {
                                 resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
                                 count++;
                             }
                         });
 
-                        document.getElementById("economy").innerHTML=resultHTML;
+                        document.getElementById("economy").innerHTML = resultHTML;
                     }
                 }
                 xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:经济", true);
@@ -366,20 +406,23 @@
         </script>
         <!--娱乐-->
         <div class="home fl">
-        	<div class="clearfix title">
+            <div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" >科技</a></li>
-                      
+                        <li class="on"><a href="javascript:;">科技</a></li>
+
                     </ul>
                 </div>
-                <ul class="tab-bd1 fr"><li><a href="javascript:;">更多></a></li><li><a href="javascript:;">更多></a></li></ul>
+                <ul class="tab-bd1 fr">
+                    <li><a href="javascript:;">更多></a></li>
+                    <li><a href="javascript:;">更多></a></li>
+                </ul>
             </div>
-			<div class="tab-bd">
+            <div class="tab-bd">
                 <div class="tab-pal">
                     <dl class="bottom mt10" id="science"></dl>
                 </div>
-			</div>
+            </div>
         </div>
         <script>
             $(function () {
@@ -399,16 +442,16 @@
                         var resultHTML = "";
                         var count = 0;
 
-                        $(jsonArray).each(function(){
-                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                        $(jsonArray).each(function () {
+                            var url = "/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
                             var title = this.newsTitle;
-                            if(count<4) {
+                            if (count < 4) {
                                 resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
                                 count++;
                             }
                         });
 
-                        document.getElementById("science").innerHTML=resultHTML;
+                        document.getElementById("science").innerHTML = resultHTML;
                     }
                 }
                 xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:科技", true);
@@ -417,21 +460,24 @@
         </script>
         <!--体育-->
         <div class="home fl ml20">
-        	<div class="clearfix title">
+            <div class="clearfix title">
                 <div class="tab-hd clearfix fl">
                     <ul class="tab-nav clearfix">
-                      <li class="on"><a href="javascript:;" >疫情</a></li>
-                      
+                        <li class="on"><a href="javascript:;">疫情</a></li>
+
                     </ul>
                 </div>
-                <ul class="tab-bd1 fr"><li><a href="javascript:;">更多></a></li><li><a href="javascript:;">更多></a></li></ul>
+                <ul class="tab-bd1 fr">
+                    <li><a href="javascript:;">更多></a></li>
+                    <li><a href="javascript:;">更多></a></li>
+                </ul>
             </div>
-			<div class="tab-bd">
-                
+            <div class="tab-bd">
+
                 <div class="tab-pal">
                     <dl class="bottom mt10" id="epidemic"></dl>
                 </div>
-			</div>
+            </div>
         </div>
         <script>
             $(function () {
@@ -451,16 +497,16 @@
                         var resultHTML = "";
                         var count = 0;
 
-                        $(jsonArray).each(function(){
-                            var url ="/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
+                        $(jsonArray).each(function () {
+                            var url = "/OnlineNews_war_exploded/detail_page_test.html?newsId=" + this.newsId;
                             var title = this.newsTitle;
-                            if(count<8) {
+                            if (count < 8) {
                                 resultHTML = resultHTML + "<dd><span>•</span><a href=\"" + url + "\">" + title + "</a></dd>";
                                 count++;
                             }
                         });
 
-                        document.getElementById("epidemic").innerHTML=resultHTML;
+                        document.getElementById("epidemic").innerHTML = resultHTML;
                     }
                 }
                 xmlhttp.open("GET", "/OnlineNews_war_exploded/newsSearch?keyword=Label:疫情", true);

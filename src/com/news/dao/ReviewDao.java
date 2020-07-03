@@ -15,7 +15,6 @@ public interface ReviewDao {
      * 删除
      */
     public int delete(Review review);
-
     /**
      * 查询
      */

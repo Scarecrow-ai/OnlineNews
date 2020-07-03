@@ -42,5 +42,6 @@ public class ReviewServlet extends HttpServlet {
         review.setText(text);
 
         dao.insert(review);
+
     }
 }
