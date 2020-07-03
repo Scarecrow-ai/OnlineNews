@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class ReviewDButils {
     //连接地址
-    private String url = "jdbc:mysql://localhost:3306/review?useSSL=false&serverTimezone=UTC";
+    private String url = "jdbc:mysql://localhost:3306/news?useSSL=false&serverTimezone=UTC";
     //用户名
     private String user = "root";
     //用户密码

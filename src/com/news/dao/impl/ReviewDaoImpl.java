@@ -16,7 +16,7 @@ public class ReviewDaoImpl extends ReviewDButils implements ReviewDao {
         Object params[] = {null, review.getNewsId(), review.getUserName(), review.getText()};
 
         //要执行的sql语句
-        String sql = "insert into user values(?,?,?,?)";
+        String sql = "insert into review values(?,?,?,?)";
         int i = doUpdate(sql, params);
 
         //释放资源
@@ -29,29 +29,29 @@ public class ReviewDaoImpl extends ReviewDButils implements ReviewDao {
 
     public List<Review> selectnewsId(int id) {
         Object params[] = {id};
-        String sql = "select from review where newsId=?";
+        String sql = "select * from review where newsId=?";
         ResultSet rs = doQuery(sql, params);
         List<Review> list = null;
         //将评论放在list集合中
-        while (true) {
-            try {
-                if (!rs.next()) break;
-                else rs.beforeFirst();//将光标送到第一行之前
-                list = new ArrayList<Review>();
-                while (rs.next()) {
-                    //将每一条评论保存在list集合中
-                    Review review = new Review();
-                    review.setReviewId(rs.getInt(1));
-                    review.setNewsId(rs.getInt(2));
-                    review.setUserName(rs.getString(3));
-                    review.setText(rs.getString(4));
-                    list.add(review);
-                }
-            } catch (SQLException throwables) {
+
+        try {
+
+
+            list = new ArrayList<Review>();
+            while (rs.next()) {
+                //将每一条评论保存在list集合中
+                Review review = new Review();
+                review.setReviewId(rs.getInt(1));
+                review.setNewsId(rs.getInt(2));
+                review.setUserName(rs.getString(3));
+                review.setText(rs.getString(4));
+                list.add(review);
+            }
+        } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
 
-        }
+
 
         return list;
 

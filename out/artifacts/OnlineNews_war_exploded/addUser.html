@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="userServlet?caozuo=add" method="post"  enctype ="multipart/form-data">
+
+    <input type="text" id="userid" name="userid" placeholder="用户名（可包含字母或数字）">
+    <input type="tel" id="usrtel" name="usrtel" placeholder="手机号">
+    <input type="email" id="email" name="email" placeholder="邮箱">
+    <input type="password" id="psw" name="psw" placeholder="密码">
+
+    <input type="file" name="headPortrait" id="headPortrait">
+    <img id="tou_xiang" height="38" width="38">
+
+
+
+    <script>
+        var fileInput = document.querySelector('input[type=file]'),
+            previewImg = document.querySelector('img');
+        fileInput.addEventListener('change', function () {
+            var file = this.files[0];
+            var reader = new FileReader();
+            // 监听reader对象的的onload事件，当图片加载完成时，把base64编码賦值给预览图片
+            reader.addEventListener("load", function () {
+                previewImg.src = reader.result;
+            }, false);
+            // 调用reader.readAsDataURL()方法，把图片转成base64
+            reader.readAsDataURL(file);
+        }, false);
+    </script>
+
+
+    <div class="button-row">
+        <input type="submit" class="register" value="确定">
+    </div>
+</form>
+</body>
+</html>

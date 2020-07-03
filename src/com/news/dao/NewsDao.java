@@ -111,4 +111,39 @@ public interface NewsDao {
         }
         return targetNews;
     }
+
+    static List<News> selectAll() {
+        Object params[] = null;
+        String sql = "select * from news";
+
+        ResultSet rs;
+        NewsDButils dButils = new NewsDButils();
+        List<News> list = null;
+        //将新闻放在list集合中
+
+
+        try {
+            dButils.getConnect();
+            rs = dButils.selectTable(sql);
+            list = new ArrayList<News>();
+
+            while (rs.next()) {
+
+                News news = new News(rs.getInt("newsId")
+                        , rs.getString("newsTitle")
+                        , rs.getString("newsText")
+                        , rs.getInt("newsCount")
+                        , rs.getString("newsLabel")
+                );
+
+
+                list.add(news);
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+
+
+        return list;
+    }
 }

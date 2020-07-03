@@ -32,10 +32,12 @@ public class UserDaoImpl extends DButils implements UserDao {
                 user1.setUserImg(rs.getString(6));
 
 
+
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        getClose();
         return user1;
     }
 
@@ -48,28 +50,25 @@ public class UserDaoImpl extends DButils implements UserDao {
         ResultSet rs = doQuery(sql, params);
         List<User> list = null;
         //将学生放在list集合中
-        while (true) {
-            try {
-                if (!rs.next()) break;
-                else rs.beforeFirst();//将光标送到第一行之前
-                list = new ArrayList<User>();
-                while (rs.next()) {
-                    //将每一个学生记录保存在list集合中
-                    User user = new User();
-                    user.setUserId(rs.getInt(1));
-                    user.setUserName(rs.getString(2));
-                    user.setUserPhone(rs.getString(3));
-                    user.setUserEmail(rs.getString(4));
-                    user.setUserPwd(rs.getString(5));
-                    user.setUserImg(rs.getString(6));
 
-                    list.add(user);
+        try {
+
+            list = new ArrayList<User>();
+            while (rs.next()) {
+                //将每一个学生记录保存在list集合中
+                User user = new User();
+                user.setUserId(rs.getInt(1));
+                user.setUserName(rs.getString(2));
+                user.setUserPhone(rs.getString(3));
+                user.setUserEmail(rs.getString(4));
+                user.setUserPwd(rs.getString(5));
+                user.setUserImg(rs.getString(6));
+
+                list.add(user);
                 }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-
-        }
 
         return list;
     }

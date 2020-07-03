@@ -25,13 +25,10 @@
     </div>
 </div>
 <script>
-    function getParams(key) {
-        var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) {
-            return decodeURI(r[2]);
-        }
-        return null;
+    function getLogicalUrl(imgPath) {
+        imgPath = imgPath.replace(/(.*\\)*([^.]+)/i, "$2");
+        imgPath = "/img/" + imgPath;
+        return imgPath;
     }
 
     $(function () {
@@ -44,22 +41,18 @@
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
         xmlhttp.onreadystatechange = function () {
-            alert(xmlhttp.readyState.toString() + " " + xmlhttp.status.toString());
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var responseText = xmlhttp.responseText;
                 var jsonObject = JSON.parse(responseText);
-                var resultHTML = "";
+                ;
                 var imagePath = jsonObject.imgPath;
                 var userName = jsonObject.userName;
-                var resultHTML = "<li class=\"register\"><img id=\"headPortrait\" name=\"headPortrait\" height=\"40px\" width=\"40px\" " +
+                getLogicalUrl(imagePath);
+                var resultHTML = "<li class=\"register\"><img id=\"headPortrait\" name=\"headPortrait\" height=\"40px\" width=\"40px\""
+                    + " src=\"" + getLogicalUrl(imagePath) + "\"" +
                     "alt=\"头像\"></li> \n" +
                     " <li class=\"login\" name=\"uesrid\"> <span id=\"userid\">" + userName + "</span> </li>  ";
                 document.getElementById("user").innerHTML = resultHTML;
-                var image = document.getElementById("headPortrait");
-                alert("here");
-                var reader = new FileReader();
-                image.src = reader.readAsDataURL(imagePath);
-
             }
         }
         xmlhttp.open("POST", "/OnlineNews_war_exploded/signup", true);
